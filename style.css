@@ -7,11 +7,13 @@
   --turquoise: #72c4c1;
   --turquoise-light: #d9eee1;
   --coral: #f27d4f;
-  --coral-soft: #f6b6a2;
+  --coral-strong: #ff6f61;
+  --coral-soft: #ffc0b2;
+  --pink: #ff8fa3;
   --cream: #fff4df;
-  --ink: #242452;
-  --white: #fffaf1;
-  --shadow: 0 12px 32px rgba(8, 11, 63, .22);
+  --ink: #fffaf1;
+  --white: #ffffff;
+  --shadow: 0 12px 32px rgba(8, 11, 63, .30);
   --radius: 18px;
 }
 
@@ -20,56 +22,125 @@
   max-width: none !important;
   min-height: 100vh;
   background-image:
-    linear-gradient(rgba(8, 11, 63, .18), rgba(8, 11, 63, .18)),
+    linear-gradient(rgba(8, 11, 63, .32), rgba(8, 11, 63, .32)),
     url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  color: var(--ink);
+  color: var(--ink) !important;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
 }
 
 html,
 body {
   min-height: 100%;
-  background: linear-gradient(135deg, var(--turquoise-light), var(--turquoise) 48%, #4fa5ad);
+  background: #10145f;
+  color: var(--white) !important;
 }
 
 .container-fluid {
   background: transparent !important;
 }
 
+/* Texte général : blanc avec ombre pour rester lisible sur l'image */
+.container,
+.container p,
+.container span,
+.container div,
+.container label,
+.container li,
+.container td,
+.container th,
+.container small {
+  color: var(--white);
+  text-shadow: 0 2px 4px rgba(8, 11, 63, .85);
+}
+
+/* Titres : rose corail */
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6,
+.profile h1,
+.profile h2,
+.profile h3,
+.user-profile h1,
+.user-profile h2,
+.user-profile h3 {
+  color: var(--coral-soft) !important;
+  text-shadow: 0 2px 5px rgba(8, 11, 63, .95);
+  font-weight: 800;
+}
+
+/* Liens : rose/corail, avec survol blanc */
+a,
+.container a,
+.container a:visited {
+  color: var(--coral-soft) !important;
+  text-shadow: 0 2px 4px rgba(8, 11, 63, .9);
+  font-weight: 700;
+}
+
+a:hover,
+a:focus,
+.container a:hover,
+.container a:focus {
+  color: var(--white) !important;
+  text-decoration: underline;
+}
+
+/* Panneaux translucides : texte blanc */
 .panel,
 .card,
 .well {
-  background: rgba(255, 250, 241, .88) !important;
-  border: 1px solid rgba(16, 20, 95, .15) !important;
+  background: rgba(8, 11, 63, .76) !important;
+  border: 1px solid rgba(255, 192, 178, .55) !important;
   border-radius: var(--radius) !important;
   box-shadow: var(--shadow);
   backdrop-filter: blur(8px);
 }
 
+.panel p,
+.panel span,
+.panel div,
+.panel label,
+.card p,
+.card span,
+.card div,
+.card label,
+.well p,
+.well span,
+.well div,
+.well label {
+  color: var(--white) !important;
+}
+
 .panel-heading,
 .card-header {
   color: var(--white) !important;
-  background: linear-gradient(135deg, var(--navy), var(--blue)) !important;
+  background: linear-gradient(135deg, var(--coral-strong), var(--pink)) !important;
   border-radius: var(--radius) var(--radius) 0 0 !important;
+  text-shadow: 0 2px 4px rgba(8, 11, 63, .7);
   letter-spacing: .04em;
 }
 
+/* Navigation */
 .navbar,
 .navbar-default,
 .navbar-inverse {
-  background: linear-gradient(90deg, var(--deep-navy), var(--navy) 55%, var(--blue)) !important;
+  background: linear-gradient(90deg, var(--deep-navy), #5d174d 58%, var(--coral-strong)) !important;
   border: 0 !important;
-  box-shadow: 0 5px 20px rgba(8, 11, 63, .28);
+  box-shadow: 0 5px 20px rgba(8, 11, 63, .45);
 }
 
 .navbar a,
 .navbar-brand,
 .navbar-nav > li > a {
   color: var(--white) !important;
+  text-shadow: 0 2px 4px rgba(8, 11, 63, .8);
 }
 
 .navbar-nav > li > a:hover,
@@ -77,123 +148,119 @@ body {
   color: var(--coral-soft) !important;
 }
 
-a {
-  color: var(--blue);
-  font-weight: 600;
-}
-
-a:hover,
-a:focus {
-  color: var(--coral);
-}
-
+/* Boutons */
 .btn,
 button,
 input[type="submit"] {
-  border: 0 !important;
+  border: 1px solid rgba(255, 255, 255, .3) !important;
   border-radius: 999px !important;
-  background: linear-gradient(135deg, var(--navy), var(--blue)) !important;
+  background: linear-gradient(135deg, var(--coral-strong), var(--pink)) !important;
   color: var(--white) !important;
-  box-shadow: 0 5px 12px rgba(16, 20, 95, .2);
+  text-shadow: 0 2px 4px rgba(8, 11, 63, .7);
+  box-shadow: 0 5px 12px rgba(8, 11, 63, .3);
 }
 
 .btn:hover,
 button:hover,
 input[type="submit"]:hover {
-  background: linear-gradient(135deg, var(--coral), #d85d45) !important;
+  background: linear-gradient(135deg, var(--white), var(--coral-soft)) !important;
+  color: var(--deep-navy) !important;
+  text-shadow: none;
 }
 
+/* Avatar */
 .user-avatar,
 .avatar,
 .profile-avatar,
 img[src*="avatar"] {
-  border: 5px solid var(--cream) !important;
-  box-shadow: 0 0 0 4px var(--coral), var(--shadow) !important;
+  border: 5px solid var(--white) !important;
+  box-shadow: 0 0 0 4px var(--coral-strong), var(--shadow) !important;
   border-radius: 50% !important;
   object-fit: cover;
 }
 
-.profile h1,
-.profile h2,
-.profile h3,
-.user-profile h1,
-.user-profile h2,
-.user-profile h3 {
-  color: var(--navy) !important;
-  font-weight: 800;
-}
-
+/* Onglets */
 .nav-tabs {
-  border-bottom: 2px solid rgba(16, 20, 95, .18) !important;
+  border-bottom: 2px solid rgba(255, 192, 178, .7) !important;
 }
 
 .nav-tabs > li > a {
   border: 0 !important;
   border-radius: 999px 999px 0 0 !important;
-  color: var(--navy) !important;
+  color: var(--white) !important;
 }
 
 .nav-tabs > li.active > a,
 .nav-tabs > li > a:hover {
-  background: var(--coral-soft) !important;
-  color: var(--deep-navy) !important;
+  background: var(--coral-strong) !important;
+  color: var(--white) !important;
 }
 
+/* Tableaux */
 .table,
 table {
-  background: rgba(255, 250, 241, .72);
+  background: rgba(8, 11, 63, .72) !important;
+  color: var(--white) !important;
   border-radius: 12px;
   overflow: hidden;
 }
 
 .table > thead > tr > th,
 thead th {
-  background: var(--navy) !important;
+  background: var(--coral-strong) !important;
   color: var(--white) !important;
 }
 
 .table-striped > tbody > tr:nth-of-type(odd),
 tbody tr:nth-child(odd) {
-  background: rgba(114, 196, 193, .16) !important;
+  background: rgba(255, 111, 97, .18) !important;
 }
 
 tbody tr:hover {
-  background: rgba(246, 182, 162, .3) !important;
+  background: rgba(255, 192, 178, .28) !important;
 }
 
+/* Champs */
 .form-control,
 input,
 textarea,
 select {
-  border: 2px solid rgba(48, 60, 161, .22) !important;
+  border: 2px solid rgba(255, 192, 178, .65) !important;
   border-radius: 12px !important;
-  background: rgba(255, 250, 241, .9) !important;
-  color: var(--ink) !important;
+  background: rgba(8, 11, 63, .8) !important;
+  color: var(--white) !important;
+}
+
+.form-control::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: var(--coral-soft) !important;
 }
 
 .form-control:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--coral) !important;
-  box-shadow: 0 0 0 3px rgba(242, 125, 79, .2) !important;
+  border-color: var(--coral-strong) !important;
+  box-shadow: 0 0 0 3px rgba(255, 111, 97, .3) !important;
 }
 
+/* Badges et barres */
 .badge,
 .label {
   border-radius: 999px !important;
-  background: var(--coral) !important;
+  background: var(--coral-strong) !important;
   color: var(--white) !important;
 }
 
 .progress {
   height: 12px;
-  background: rgba(16, 20, 95, .12) !important;
+  background: rgba(255, 255, 255, .2) !important;
   border-radius: 999px !important;
 }
 
 .progress-bar {
-  background: linear-gradient(90deg, var(--coral), var(--blue)) !important;
+  background: linear-gradient(90deg, var(--coral-strong), var(--pink)) !important;
   border-radius: 999px;
 }
 
