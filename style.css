@@ -15,13 +15,13 @@
   --radius: 18px;
 }
 
-/* URL de l'image générée pour le fond d'écran */
+/* Fond d'écran hébergé sur ImgBB */
 .container {
   max-width: none !important;
   min-height: 100vh;
   background-image:
     linear-gradient(rgba(8, 11, 63, .18), rgba(8, 11, 63, .18)),
-    url("https://user-gen-media-assets.s3.amazonaws.com/seedream_images/f7b19760-c533-4dad-bbb6-ccb8cb430e8d.png?AWSAccessKeyId=ASIA2F3EMEYE6EZ26RNX&Signature=hsS94EN%2FcBDEk9CP619yZDYmDII%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEIT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIE2te5LxyfGmdDwuswMGA2l2Vc5d%2By5Ztg8Wp8CnLYmIAiEA5f5TLvxA58wkQz0LJidrmicBUNSoYh6IrNQdm16ASeEq8wQITBABGgw2OTk3NTMzMDk3MDUiDKZ4AskL1Co2bW8CWyrQBA0VCF4qr6j8CSt4kgRi1poz7xlMu7x6X7PcBsQinnS3l51uEPkYAWBpyB6ROteICtWxEigBPxJJ5xZJcC5NodW%2FUYeDKPZatR5T6T1U8hJ4Li%2Bf4sNtDZ9CVSPtphYN%2FmLLXW%2B%2FN%2BSwthm4o4aqGDGeqpWna1Vk2xuSXcNifj%2BnZroChZVL3yx5CmdOjzPmhcsZl756aru6B%2BOQXzKuajmATAow9IyexgEf8qJNJzM9hgu1a%2FX9VKkGMX4sAwJJ3tOudh8RRNiwhQmVjvwp54LlEIyML9azosKmFJAeZYNR1YPHBrBlXyqWIl%2BzpoLQ2YPlLRvFdBK1k30xF5n7XjZBTLYrO9Ho%2B3MnHtUn1potDdjdCyePGvfcGZ4yLGPfv9yXlqszcH2J3ok4ffcPcNOli2Z9vhirPUhC7OyxbkNE3Ods1oS%2FQLAMozID86Y3o1%2BC60rJcarzZpUsLNhU%2FkDsraJac4kzLu0fpit2Kp00cYrj1yXuMXd%2Bwon2Uj%2F5kzMZ%2FaadmAyCG9uKuzJzgXchBlwRCjm5z3UEAHQ6KIqkfvosbaXyppngc9sVUSEHncDVKyFwUwgEzUSN6kJQiW08O2kr0Mj%2FLwkhKk60e1ATu3Lr2OeNoH%2FpXFlV78X4V6iHNrraMZUlMwxjVHAtagyihzaQnvsnH%2BERUeb%2FeOvGXvQSKbu7tj7I9IODW6j3PH%2BYpqQYXBdZwdzRGcASYAW%2BY4jrEhoiNmC1OXck71DOS2hLrbA3An8rbDaB%2BKjiAKkx27ImLu53AXpNgX%2FWPIkwo7iN1AY6mAEp978umCCfnom8HD4r3F3KskadS21txDYBDyIwP%2FcZgmlIDN92BbPsCDBcnN98SXUmOFjbpwszUW1I4wf3KtWNNjA9oiNr2Zg2AQWynsHbNwpuu6o2bEfVWnp6GCJqB4bDy6BktkgMXn%2FYqDWlAc3MCE%2FlVwRLlkfyf9AytFGhQSrVbtxZjVJhfNyzLRdInsIjt4GM7ieucQ%3D%3D&Expires=1786997238");
+    url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
