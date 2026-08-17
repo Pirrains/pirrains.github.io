@@ -3,38 +3,30 @@
 :root {
   --navy: #10145f;
   --deep-navy: #080b3f;
-  --blue: #303ca1;
-  --turquoise: #72c4c1;
-  --turquoise-light: #d9eee1;
-  --coral: #f27d4f;
-  --coral-strong: #ff6f61;
+  --coral: #ff6f61;
   --coral-soft: #ffc0b2;
   --pink: #ff8fa3;
-  --cream: #fff4df;
-  --ink: #fffaf1;
   --white: #ffffff;
   --radius: 18px;
 }
 
-/* Fond d'écran hébergé sur ImgBB */
+/* Fond d'écran sans voile sombre */
 .container {
   max-width: none !important;
   min-height: 100vh;
-  background-image:
-    linear-gradient(rgba(8, 11, 63, .32), rgba(8, 11, 63, .32)),
-    url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
+  background-image: url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  color: var(--ink) !important;
+  color: var(--white) !important;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
 }
 
 html,
 body {
   min-height: 100%;
-  background: #10145f;
+  background: transparent !important;
   color: var(--white) !important;
 }
 
@@ -42,7 +34,27 @@ body {
   background: transparent !important;
 }
 
-/* Texte général : blanc avec ombre pour rester lisible sur l'image */
+/* Texte sans ombre */
+.container,
+.container p,
+.container span,
+.container div,
+.container label,
+.container li,
+.container td,
+.container th,
+.container small,
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6,
+.container a,
+.container a:visited {
+  text-shadow: none !important;
+}
+
 .container,
 .container p,
 .container span,
@@ -52,11 +64,9 @@ body {
 .container td,
 .container th,
 .container small {
-  color: var(--white);
-  text-shadow: 0 2px 4px rgba(8, 11, 63, .85);
+  color: var(--white) !important;
 }
 
-/* Titres : rose corail */
 .container h1,
 .container h2,
 .container h3,
@@ -70,16 +80,14 @@ body {
 .user-profile h2,
 .user-profile h3 {
   color: var(--coral-soft) !important;
-  text-shadow: 0 2px 5px rgba(8, 11, 63, .95);
   font-weight: 800;
 }
 
-/* Liens : rose/corail, avec survol blanc */
+/* Liens rose corail, sans ombre */
 a,
 .container a,
 .container a:visited {
   color: var(--coral-soft) !important;
-  text-shadow: 0 2px 4px rgba(8, 11, 63, .9);
   font-weight: 700;
 }
 
@@ -91,15 +99,15 @@ a:focus,
   text-decoration: underline;
 }
 
-/* Panneaux translucides : texte blanc */
+/* Panneaux sans assombrissement */
 .panel,
 .card,
 .well {
-  background: rgba(8, 11, 63, .76) !important;
-  border: 1px solid rgba(255, 192, 178, .55) !important;
+  background: rgba(255, 255, 255, .78) !important;
+  border: 1px solid rgba(255, 192, 178, .75) !important;
   border-radius: var(--radius) !important;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(8px);
+  box-shadow: none !important;
+  backdrop-filter: blur(5px);
 }
 
 .panel p,
@@ -114,32 +122,32 @@ a:focus,
 .well span,
 .well div,
 .well label {
-  color: var(--white) !important;
+  color: var(--deep-navy) !important;
+  text-shadow: none !important;
 }
 
 .panel-heading,
 .card-header {
   color: var(--white) !important;
-  background: linear-gradient(135deg, var(--coral-strong), var(--pink)) !important;
+  background: linear-gradient(135deg, var(--coral), var(--pink)) !important;
   border-radius: var(--radius) var(--radius) 0 0 !important;
-  text-shadow: 0 2px 4px rgba(8, 11, 63, .7);
-  letter-spacing: .04em;
+  text-shadow: none !important;
 }
 
 /* Navigation */
 .navbar,
 .navbar-default,
 .navbar-inverse {
-  background: linear-gradient(90deg, var(--deep-navy), #5d174d 58%, var(--coral-strong)) !important;
+  background: linear-gradient(90deg, var(--deep-navy), #5d174d 58%, var(--coral)) !important;
   border: 0 !important;
-  box-shadow: 0 5px 20px rgba(8, 11, 63, .45);
+  box-shadow: none !important;
 }
 
 .navbar a,
 .navbar-brand,
 .navbar-nav > li > a {
   color: var(--white) !important;
-  text-shadow: 0 2px 4px rgba(8, 11, 63, .8);
+  text-shadow: none !important;
 }
 
 .navbar-nav > li > a:hover,
@@ -151,20 +159,19 @@ a:focus,
 .btn,
 button,
 input[type="submit"] {
-  border: 1px solid rgba(255, 255, 255, .3) !important;
+  border: 1px solid rgba(255, 255, 255, .5) !important;
   border-radius: 999px !important;
-  background: linear-gradient(135deg, var(--coral-strong), var(--pink)) !important;
+  background: linear-gradient(135deg, var(--coral), var(--pink)) !important;
   color: var(--white) !important;
-  text-shadow: 0 2px 4px rgba(8, 11, 63, .7);
-  box-shadow: 0 5px 12px rgba(8, 11, 63, .3);
+  text-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .btn:hover,
 button:hover,
 input[type="submit"]:hover {
-  background: linear-gradient(135deg, var(--white), var(--coral-soft)) !important;
-  color: var(--deep-navy) !important;
-  text-shadow: none;
+  background: var(--white) !important;
+  color: var(--coral) !important;
 }
 
 /* Avatar */
@@ -173,50 +180,60 @@ input[type="submit"]:hover {
 .profile-avatar,
 img[src*="avatar"] {
   border: 5px solid var(--white) !important;
-  box-shadow: 0 0 0 4px var(--coral-strong), var(--shadow) !important;
+  box-shadow: 0 0 0 4px var(--coral) !important;
   border-radius: 50% !important;
   object-fit: cover;
 }
 
 /* Onglets */
 .nav-tabs {
-  border-bottom: 2px solid rgba(255, 192, 178, .7) !important;
+  border-bottom: 2px solid rgba(255, 192, 178, .8) !important;
 }
 
 .nav-tabs > li > a {
   border: 0 !important;
   border-radius: 999px 999px 0 0 !important;
   color: var(--white) !important;
+  text-shadow: none !important;
 }
 
 .nav-tabs > li.active > a,
 .nav-tabs > li > a:hover {
-  background: var(--coral-strong) !important;
+  background: var(--coral) !important;
   color: var(--white) !important;
 }
 
 /* Tableaux */
 .table,
 table {
-  background: rgba(8, 11, 63, .72) !important;
-  color: var(--white) !important;
+  background: rgba(255, 255, 255, .78) !important;
+  color: var(--deep-navy) !important;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: none !important;
 }
 
 .table > thead > tr > th,
 thead th {
-  background: var(--coral-strong) !important;
+  background: var(--coral) !important;
   color: var(--white) !important;
+}
+
+.table td,
+.table th,
+tbody td,
+tbody th {
+  color: var(--deep-navy) !important;
+  text-shadow: none !important;
 }
 
 .table-striped > tbody > tr:nth-of-type(odd),
 tbody tr:nth-child(odd) {
-  background: rgba(255, 111, 97, .18) !important;
+  background: rgba(255, 192, 178, .24) !important;
 }
 
 tbody tr:hover {
-  background: rgba(255, 192, 178, .28) !important;
+  background: rgba(255, 192, 178, .45) !important;
 }
 
 /* Champs */
@@ -224,42 +241,45 @@ tbody tr:hover {
 input,
 textarea,
 select {
-  border: 2px solid rgba(255, 192, 178, .65) !important;
+  border: 2px solid rgba(255, 111, 97, .65) !important;
   border-radius: 12px !important;
-  background: rgba(8, 11, 63, .8) !important;
-  color: var(--white) !important;
+  background: rgba(255, 255, 255, .9) !important;
+  color: var(--deep-navy) !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .form-control::placeholder,
 input::placeholder,
 textarea::placeholder {
-  color: var(--coral-soft) !important;
+  color: #a84958 !important;
 }
 
 .form-control:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--coral-strong) !important;
-  box-shadow: 0 0 0 3px rgba(255, 111, 97, .3) !important;
+  border-color: var(--coral) !important;
+  box-shadow: none !important;
 }
 
-/* Badges et barres */
 .badge,
 .label {
   border-radius: 999px !important;
-  background: var(--coral-strong) !important;
+  background: var(--coral) !important;
   color: var(--white) !important;
+  text-shadow: none !important;
 }
 
 .progress {
   height: 12px;
-  background: rgba(255, 255, 255, .2) !important;
+  background: rgba(255, 255, 255, .55) !important;
   border-radius: 999px !important;
+  box-shadow: none !important;
 }
 
 .progress-bar {
-  background: linear-gradient(90deg, var(--coral-strong), var(--pink)) !important;
+  background: linear-gradient(90deg, var(--coral), var(--pink)) !important;
   border-radius: 999px;
 }
 
