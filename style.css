@@ -1,0 +1,205 @@
+/* OGS profile theme — Nexus Alpha / floral cyberpunk */
+
+:root {
+  --navy: #10145f;
+  --deep-navy: #080b3f;
+  --blue: #303ca1;
+  --turquoise: #72c4c1;
+  --turquoise-light: #d9eee1;
+  --coral: #f27d4f;
+  --coral-soft: #f6b6a2;
+  --cream: #fff4df;
+  --ink: #242452;
+  --white: #fffaf1;
+  --shadow: 0 12px 32px rgba(8, 11, 63, .22);
+  --radius: 18px;
+}
+
+/* URL de l'image générée pour le fond d'écran */
+.container {
+  max-width: none !important;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(8, 11, 63, .18), rgba(8, 11, 63, .18)),
+    url("https://user-gen-media-assets.s3.amazonaws.com/seedream_images/f7b19760-c533-4dad-bbb6-ccb8cb430e8d.png?AWSAccessKeyId=ASIA2F3EMEYE6EZ26RNX&Signature=hsS94EN%2FcBDEk9CP619yZDYmDII%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEIT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIE2te5LxyfGmdDwuswMGA2l2Vc5d%2By5Ztg8Wp8CnLYmIAiEA5f5TLvxA58wkQz0LJidrmicBUNSoYh6IrNQdm16ASeEq8wQITBABGgw2OTk3NTMzMDk3MDUiDKZ4AskL1Co2bW8CWyrQBA0VCF4qr6j8CSt4kgRi1poz7xlMu7x6X7PcBsQinnS3l51uEPkYAWBpyB6ROteICtWxEigBPxJJ5xZJcC5NodW%2FUYeDKPZatR5T6T1U8hJ4Li%2Bf4sNtDZ9CVSPtphYN%2FmLLXW%2B%2FN%2BSwthm4o4aqGDGeqpWna1Vk2xuSXcNifj%2BnZroChZVL3yx5CmdOjzPmhcsZl756aru6B%2BOQXzKuajmATAow9IyexgEf8qJNJzM9hgu1a%2FX9VKkGMX4sAwJJ3tOudh8RRNiwhQmVjvwp54LlEIyML9azosKmFJAeZYNR1YPHBrBlXyqWIl%2BzpoLQ2YPlLRvFdBK1k30xF5n7XjZBTLYrO9Ho%2B3MnHtUn1potDdjdCyePGvfcGZ4yLGPfv9yXlqszcH2J3ok4ffcPcNOli2Z9vhirPUhC7OyxbkNE3Ods1oS%2FQLAMozID86Y3o1%2BC60rJcarzZpUsLNhU%2FkDsraJac4kzLu0fpit2Kp00cYrj1yXuMXd%2Bwon2Uj%2F5kzMZ%2FaadmAyCG9uKuzJzgXchBlwRCjm5z3UEAHQ6KIqkfvosbaXyppngc9sVUSEHncDVKyFwUwgEzUSN6kJQiW08O2kr0Mj%2FLwkhKk60e1ATu3Lr2OeNoH%2FpXFlV78X4V6iHNrraMZUlMwxjVHAtagyihzaQnvsnH%2BERUeb%2FeOvGXvQSKbu7tj7I9IODW6j3PH%2BYpqQYXBdZwdzRGcASYAW%2BY4jrEhoiNmC1OXck71DOS2hLrbA3An8rbDaB%2BKjiAKkx27ImLu53AXpNgX%2FWPIkwo7iN1AY6mAEp978umCCfnom8HD4r3F3KskadS21txDYBDyIwP%2FcZgmlIDN92BbPsCDBcnN98SXUmOFjbpwszUW1I4wf3KtWNNjA9oiNr2Zg2AQWynsHbNwpuu6o2bEfVWnp6GCJqB4bDy6BktkgMXn%2FYqDWlAc3MCE%2FlVwRLlkfyf9AytFGhQSrVbtxZjVJhfNyzLRdInsIjt4GM7ieucQ%3D%3D&Expires=1786997238");
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: linear-gradient(135deg, var(--turquoise-light), var(--turquoise) 48%, #4fa5ad);
+}
+
+.container-fluid {
+  background: transparent !important;
+}
+
+.panel,
+.card,
+.well {
+  background: rgba(255, 250, 241, .88) !important;
+  border: 1px solid rgba(16, 20, 95, .15) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.panel-heading,
+.card-header {
+  color: var(--white) !important;
+  background: linear-gradient(135deg, var(--navy), var(--blue)) !important;
+  border-radius: var(--radius) var(--radius) 0 0 !important;
+  letter-spacing: .04em;
+}
+
+.navbar,
+.navbar-default,
+.navbar-inverse {
+  background: linear-gradient(90deg, var(--deep-navy), var(--navy) 55%, var(--blue)) !important;
+  border: 0 !important;
+  box-shadow: 0 5px 20px rgba(8, 11, 63, .28);
+}
+
+.navbar a,
+.navbar-brand,
+.navbar-nav > li > a {
+  color: var(--white) !important;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-brand:hover {
+  color: var(--coral-soft) !important;
+}
+
+a {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+a:hover,
+a:focus {
+  color: var(--coral);
+}
+
+.btn,
+button,
+input[type="submit"] {
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, var(--navy), var(--blue)) !important;
+  color: var(--white) !important;
+  box-shadow: 0 5px 12px rgba(16, 20, 95, .2);
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+  background: linear-gradient(135deg, var(--coral), #d85d45) !important;
+}
+
+.user-avatar,
+.avatar,
+.profile-avatar,
+img[src*="avatar"] {
+  border: 5px solid var(--cream) !important;
+  box-shadow: 0 0 0 4px var(--coral), var(--shadow) !important;
+  border-radius: 50% !important;
+  object-fit: cover;
+}
+
+.profile h1,
+.profile h2,
+.profile h3,
+.user-profile h1,
+.user-profile h2,
+.user-profile h3 {
+  color: var(--navy) !important;
+  font-weight: 800;
+}
+
+.nav-tabs {
+  border-bottom: 2px solid rgba(16, 20, 95, .18) !important;
+}
+
+.nav-tabs > li > a {
+  border: 0 !important;
+  border-radius: 999px 999px 0 0 !important;
+  color: var(--navy) !important;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li > a:hover {
+  background: var(--coral-soft) !important;
+  color: var(--deep-navy) !important;
+}
+
+.table,
+table {
+  background: rgba(255, 250, 241, .72);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table > thead > tr > th,
+thead th {
+  background: var(--navy) !important;
+  color: var(--white) !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd),
+tbody tr:nth-child(odd) {
+  background: rgba(114, 196, 193, .16) !important;
+}
+
+tbody tr:hover {
+  background: rgba(246, 182, 162, .3) !important;
+}
+
+.form-control,
+input,
+textarea,
+select {
+  border: 2px solid rgba(48, 60, 161, .22) !important;
+  border-radius: 12px !important;
+  background: rgba(255, 250, 241, .9) !important;
+  color: var(--ink) !important;
+}
+
+.form-control:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--coral) !important;
+  box-shadow: 0 0 0 3px rgba(242, 125, 79, .2) !important;
+}
+
+.badge,
+.label {
+  border-radius: 999px !important;
+  background: var(--coral) !important;
+  color: var(--white) !important;
+}
+
+.progress {
+  height: 12px;
+  background: rgba(16, 20, 95, .12) !important;
+  border-radius: 999px !important;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--coral), var(--blue)) !important;
+  border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    background-position: 60% 0;
+    background-attachment: scroll;
+  }
+}
