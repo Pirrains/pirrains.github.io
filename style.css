@@ -1,4 +1,4 @@
-/* OGS profile theme — Nexus Alpha / modes jour-nuit / sakura réaliste */
+/* OGS profile theme — Nexus Alpha / thèmes Light, Dark et Auto */
 
 :root {
   --navy: #10145f;
@@ -9,38 +9,145 @@
   --white: #ffffff;
   --black: #17172b;
   --radius: 18px;
+
+  /* Variables de thème OGS : elles suivent le thème actif de l'application */
+  --profile-bg-image: url("https://i.ibb.co/mFPPB94R/Nexus-corail-white.png");
+  --profile-text: var(--black);
+  --profile-heading: var(--navy);
+  --profile-link: var(--coral);
+  --profile-panel: rgba(255, 255, 255, .82);
+  --profile-panel-text: var(--black);
+  --profile-border: rgba(16, 20, 95, .18);
+  --profile-input: rgba(255, 255, 255, .94);
 }
 
-/* Mode jour par défaut */
+/*
+ * OGS utilise des thèmes d'interface, pas forcément .dark-mode/.night-mode.
+ * Ces sélecteurs couvrent les variantes theme-dark / theme-light et les
+ * attributs data-theme généralement utilisés par les applications web.
+ */
+
+/* Thème DARK : bouton lune */
+html.theme-dark,
+body.theme-dark,
+html.dark,
+body.dark,
+html[data-theme="dark"],
+body[data-theme="dark"],
+html[data-color-theme="dark"],
+body[data-color-theme="dark"],
+html[data-theme-name="dark"],
+body[data-theme-name="dark"],
+html[data-bs-theme="dark"],
+body[data-bs-theme="dark"],
+html.ogs-dark,
+body.ogs-dark {
+  --profile-bg-image: url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
+  --profile-text: var(--white);
+  --profile-heading: var(--coral-soft);
+  --profile-link: var(--coral-soft);
+  --profile-panel: rgba(8, 11, 63, .78);
+  --profile-panel-text: var(--white);
+  --profile-border: rgba(255, 192, 178, .55);
+  --profile-input: rgba(8, 11, 63, .8);
+}
+
+/* Compatibilité avec des classes appliquées sur un wrapper OGS */
+.theme-dark .container,
+.dark-theme .container,
+.theme-dark .profile,
+.dark-theme .profile,
+[data-theme="dark"] .container,
+[data-theme="dark"] .profile {
+  --profile-bg-image: url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
+  --profile-text: var(--white);
+  --profile-heading: var(--coral-soft);
+  --profile-link: var(--coral-soft);
+  --profile-panel: rgba(8, 11, 63, .78);
+  --profile-panel-text: var(--white);
+  --profile-border: rgba(255, 192, 178, .55);
+  --profile-input: rgba(8, 11, 63, .8);
+}
+
+/* Thème LIGHT : bouton soleil */
+html.theme-light,
+body.theme-light,
+html.light,
+body.light,
+html[data-theme="light"],
+body[data-theme="light"],
+html[data-color-theme="light"],
+body[data-color-theme="light"],
+html[data-theme-name="light"],
+body[data-theme-name="light"],
+html[data-bs-theme="light"],
+body[data-bs-theme="light"],
+html.ogs-light,
+body.ogs-light {
+  --profile-bg-image: url("https://i.ibb.co/mFPPB94R/Nexus-corail-white.png");
+  --profile-text: var(--black);
+  --profile-heading: var(--navy);
+  --profile-link: var(--coral);
+  --profile-panel: rgba(255, 255, 255, .82);
+  --profile-panel-text: var(--black);
+  --profile-border: rgba(16, 20, 95, .18);
+  --profile-input: rgba(255, 255, 255, .94);
+}
+
+/* Mode AUTO : suit le réglage clair/sombre de l'ordinateur */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --profile-bg-image: url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
+    --profile-text: var(--white);
+    --profile-heading: var(--coral-soft);
+    --profile-link: var(--coral-soft);
+    --profile-panel: rgba(8, 11, 63, .78);
+    --profile-panel-text: var(--white);
+    --profile-border: rgba(255, 192, 178, .55);
+    --profile-input: rgba(8, 11, 63, .8);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --profile-bg-image: url("https://i.ibb.co/mFPPB94R/Nexus-corail-white.png");
+    --profile-text: var(--black);
+    --profile-heading: var(--navy);
+    --profile-link: var(--coral);
+    --profile-panel: rgba(255, 255, 255, .82);
+    --profile-panel-text: var(--black);
+    --profile-border: rgba(16, 20, 95, .18);
+    --profile-input: rgba(255, 255, 255, .94);
+  }
+}
+
+/* Fond actif */
+html,
+body {
+  min-height: 100%;
+  background: transparent !important;
+  color: var(--profile-text) !important;
+}
+
 .container {
   max-width: none !important;
   min-height: 100vh;
   position: relative;
   isolation: isolate;
-  background-image: url("https://i.ibb.co/mFPPB94R/Nexus-corail-white.png");
+  background-image: var(--profile-bg-image);
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  color: var(--black) !important;
+  color: var(--profile-text) !important;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-}
-
-html,
-body {
-  min-height: 100%;
-  background: transparent !important;
-  color: var(--black) !important;
 }
 
 .container-fluid {
   background: transparent !important;
 }
 
-/*
- * Animation Sakura avec les cinq images fournies.
- * Chaque pétale est un pseudo-élément indépendant.
- */
+/* Animation Sakura */
 .container::before,
 .container::after {
   content: "";
@@ -49,7 +156,6 @@ body {
   z-index: 20;
   pointer-events: none;
   background-repeat: no-repeat;
-  background-size: 34px auto;
   opacity: .88;
 }
 
@@ -60,18 +166,8 @@ body {
     url("https://i.ibb.co/BVm3z6tw/S3.png"),
     url("https://i.ibb.co/F4bhqqPn/S5.png"),
     url("https://i.ibb.co/6Rj1cKTy/S4.png");
-  background-position:
-    7% -12%,
-    26% -28%,
-    49% -18%,
-    73% -34%,
-    94% -9%;
-  background-size:
-    28px auto,
-    42px auto,
-    33px auto,
-    48px auto,
-    25px auto;
+  background-position: 7% -12%, 26% -28%, 49% -18%, 73% -34%, 94% -9%;
+  background-size: 28px auto, 42px auto, 33px auto, 48px auto, 25px auto;
   animation: sakura-layer-one 24s linear infinite;
 }
 
@@ -81,48 +177,24 @@ body {
     url("https://i.ibb.co/BVm3z6tw/S3.png"),
     url("https://i.ibb.co/6Rj1cKTy/S4.png"),
     url("https://i.ibb.co/nqmSwK7z/S1.png");
-  background-position:
-    16% -42%,
-    61% -22%,
-    87% -51%;
-  background-size:
-    22px auto,
-    31px auto,
-    38px auto;
+  background-position: 16% -42%, 61% -22%, 87% -51%;
+  background-size: 22px auto, 31px auto, 38px auto;
   animation: sakura-layer-two 31s linear infinite;
 }
 
 @keyframes sakura-layer-one {
-  0% {
-    transform: translate3d(-2%, -8%, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(3%, 25%, 0) rotate(90deg);
-  }
-  50% {
-    transform: translate3d(-3%, 53%, 0) rotate(185deg);
-  }
-  75% {
-    transform: translate3d(2%, 79%, 0) rotate(275deg);
-  }
-  100% {
-    transform: translate3d(-2%, 112%, 0) rotate(360deg);
-  }
+  0% { transform: translate3d(-2%, -8%, 0) rotate(0deg); }
+  25% { transform: translate3d(3%, 25%, 0) rotate(90deg); }
+  50% { transform: translate3d(-3%, 53%, 0) rotate(185deg); }
+  75% { transform: translate3d(2%, 79%, 0) rotate(275deg); }
+  100% { transform: translate3d(-2%, 112%, 0) rotate(360deg); }
 }
 
 @keyframes sakura-layer-two {
-  0% {
-    transform: translate3d(3%, -12%, 0) rotate(15deg);
-  }
-  30% {
-    transform: translate3d(-4%, 27%, 0) rotate(105deg);
-  }
-  65% {
-    transform: translate3d(4%, 67%, 0) rotate(220deg);
-  }
-  100% {
-    transform: translate3d(-3%, 116%, 0) rotate(390deg);
-  }
+  0% { transform: translate3d(3%, -12%, 0) rotate(15deg); }
+  30% { transform: translate3d(-4%, 27%, 0) rotate(105deg); }
+  65% { transform: translate3d(4%, 67%, 0) rotate(220deg); }
+  100% { transform: translate3d(-3%, 116%, 0) rotate(390deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -133,7 +205,7 @@ body {
   }
 }
 
-/* Texte mode jour */
+/* Typographie dynamique */
 .container,
 .container p,
 .container span,
@@ -143,7 +215,7 @@ body {
 .container td,
 .container th,
 .container small {
-  color: var(--black) !important;
+  color: var(--profile-text) !important;
   text-shadow: none !important;
 }
 
@@ -159,7 +231,7 @@ body {
 .user-profile h1,
 .user-profile h2,
 .user-profile h3 {
-  color: var(--navy) !important;
+  color: var(--profile-heading) !important;
   font-weight: 800;
   text-shadow: none !important;
 }
@@ -167,7 +239,7 @@ body {
 a,
 .container a,
 .container a:visited {
-  color: var(--coral) !important;
+  color: var(--profile-link) !important;
   font-weight: 700;
   text-shadow: none !important;
 }
@@ -176,16 +248,16 @@ a:hover,
 a:focus,
 .container a:hover,
 .container a:focus {
-  color: var(--navy) !important;
+  color: var(--profile-heading) !important;
   text-decoration: underline;
 }
 
-/* Panneaux */
+/* Panneaux dynamiques */
 .panel,
 .card,
 .well {
-  background: rgba(255, 255, 255, .82) !important;
-  border: 1px solid rgba(16, 20, 95, .18) !important;
+  background: var(--profile-panel) !important;
+  border: 1px solid var(--profile-border) !important;
   border-radius: var(--radius) !important;
   box-shadow: none !important;
   backdrop-filter: blur(5px);
@@ -203,7 +275,7 @@ a:focus,
 .well span,
 .well div,
 .well label {
-  color: var(--black) !important;
+  color: var(--profile-panel-text) !important;
   text-shadow: none !important;
 }
 
@@ -215,7 +287,6 @@ a:focus,
   text-shadow: none !important;
 }
 
-/* Navigation */
 .navbar,
 .navbar-default,
 .navbar-inverse {
@@ -236,7 +307,6 @@ a:focus,
   color: var(--coral-soft) !important;
 }
 
-/* Boutons */
 .btn,
 button,
 input[type="submit"] {
@@ -255,7 +325,6 @@ input[type="submit"]:hover {
   color: var(--white) !important;
 }
 
-/* Avatar */
 .user-avatar,
 .avatar,
 .profile-avatar,
@@ -266,15 +335,14 @@ img[src*="avatar"] {
   object-fit: cover;
 }
 
-/* Onglets */
 .nav-tabs {
-  border-bottom: 2px solid rgba(16, 20, 95, .25) !important;
+  border-bottom: 2px solid var(--profile-border) !important;
 }
 
 .nav-tabs > li > a {
   border: 0 !important;
   border-radius: 999px 999px 0 0 !important;
-  color: var(--navy) !important;
+  color: var(--profile-heading) !important;
   text-shadow: none !important;
 }
 
@@ -284,11 +352,10 @@ img[src*="avatar"] {
   color: var(--white) !important;
 }
 
-/* Tableaux */
 .table,
 table {
-  background: rgba(255, 255, 255, .84) !important;
-  color: var(--black) !important;
+  background: var(--profile-panel) !important;
+  color: var(--profile-panel-text) !important;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: none !important;
@@ -304,28 +371,18 @@ thead th {
 .table th,
 tbody td,
 tbody th {
-  color: var(--black) !important;
+  color: var(--profile-panel-text) !important;
   text-shadow: none !important;
 }
 
-.table-striped > tbody > tr:nth-of-type(odd),
-tbody tr:nth-child(odd) {
-  background: rgba(255, 192, 178, .22) !important;
-}
-
-tbody tr:hover {
-  background: rgba(255, 192, 178, .42) !important;
-}
-
-/* Champs */
 .form-control,
 input,
 textarea,
 select {
-  border: 2px solid rgba(16, 20, 95, .28) !important;
+  border: 2px solid var(--profile-border) !important;
   border-radius: 12px !important;
-  background: rgba(255, 255, 255, .94) !important;
-  color: var(--black) !important;
+  background: var(--profile-input) !important;
+  color: var(--profile-panel-text) !important;
   text-shadow: none !important;
   box-shadow: none !important;
 }
@@ -333,7 +390,7 @@ select {
 .form-control::placeholder,
 input::placeholder,
 textarea::placeholder {
-  color: #596080 !important;
+  color: var(--profile-link) !important;
 }
 
 .form-control:focus,
@@ -354,7 +411,7 @@ select:focus {
 
 .progress {
   height: 12px;
-  background: rgba(16, 20, 95, .14) !important;
+  background: var(--profile-border) !important;
   border-radius: 999px !important;
   box-shadow: none !important;
 }
@@ -362,143 +419,6 @@ select:focus {
 .progress-bar {
   background: linear-gradient(90deg, var(--coral), var(--pink)) !important;
   border-radius: 999px;
-}
-
-/* Mode nuit */
-.dark-mode .container,
-.night-mode .container,
-body.dark-mode .container,
-body.night-mode .container,
-html.dark-mode .container,
-html.night-mode .container {
-  background-image: url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
-  color: var(--white) !important;
-}
-
-.dark-mode .container,
-.dark-mode .container p,
-.dark-mode .container span,
-.dark-mode .container div,
-.dark-mode .container label,
-.dark-mode .container li,
-.dark-mode .container td,
-.dark-mode .container th,
-.dark-mode .container small,
-.night-mode .container,
-.night-mode .container p,
-.night-mode .container span,
-.night-mode .container div,
-.night-mode .container label,
-.night-mode .container li,
-.night-mode .container td,
-.night-mode .container th,
-.night-mode .container small {
-  color: var(--white) !important;
-}
-
-.dark-mode .container h1,
-.dark-mode .container h2,
-.dark-mode .container h3,
-.dark-mode .container h4,
-.dark-mode .container h5,
-.dark-mode .container h6,
-.night-mode .container h1,
-.night-mode .container h2,
-.night-mode .container h3,
-.night-mode .container h4,
-.night-mode .container h5,
-.night-mode .container h6 {
-  color: var(--coral-soft) !important;
-}
-
-.dark-mode a,
-.dark-mode .container a,
-.night-mode a,
-.night-mode .container a {
-  color: var(--coral-soft) !important;
-}
-
-.dark-mode .panel,
-.dark-mode .card,
-.dark-mode .well,
-.night-mode .panel,
-.night-mode .card,
-.night-mode .well {
-  background: rgba(8, 11, 63, .78) !important;
-  border-color: rgba(255, 192, 178, .55) !important;
-}
-
-.dark-mode .panel p,
-.dark-mode .panel span,
-.dark-mode .panel div,
-.dark-mode .panel label,
-.dark-mode .card p,
-.dark-mode .card span,
-.dark-mode .card div,
-.dark-mode .card label,
-.dark-mode .well p,
-.dark-mode .well span,
-.dark-mode .well div,
-.dark-mode .well label,
-.night-mode .panel p,
-.night-mode .panel span,
-.night-mode .panel div,
-.night-mode .panel label,
-.night-mode .card p,
-.night-mode .card span,
-.night-mode .card div,
-.night-mode .card label,
-.night-mode .well p,
-.night-mode .well span,
-.night-mode .well div,
-.night-mode .well label {
-  color: var(--white) !important;
-}
-
-.dark-mode .nav-tabs > li > a,
-.night-mode .nav-tabs > li > a {
-  color: var(--white) !important;
-}
-
-.dark-mode .table,
-.dark-mode table,
-.night-mode .table,
-.night-mode table {
-  background: rgba(8, 11, 63, .78) !important;
-  color: var(--white) !important;
-}
-
-.dark-mode .table td,
-.dark-mode .table th,
-.dark-mode tbody td,
-.dark-mode tbody th,
-.night-mode .table td,
-.night-mode .table th,
-.night-mode tbody td,
-.night-mode tbody th {
-  color: var(--white) !important;
-}
-
-.dark-mode .form-control,
-.dark-mode input,
-.dark-mode textarea,
-.dark-mode select,
-.night-mode .form-control,
-.night-mode input,
-.night-mode textarea,
-.night-mode select {
-  background: rgba(8, 11, 63, .8) !important;
-  color: var(--white) !important;
-  border-color: rgba(255, 192, 178, .65) !important;
-}
-
-.dark-mode .form-control::placeholder,
-.dark-mode input::placeholder,
-.dark-mode textarea::placeholder,
-.night-mode .form-control::placeholder,
-.night-mode input::placeholder,
-.night-mode textarea::placeholder {
-  color: var(--coral-soft) !important;
 }
 
 @media (max-width: 768px) {
