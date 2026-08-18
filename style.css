@@ -1,4 +1,4 @@
-/* OGS profile theme — Nexus Alpha / floral cyberpunk / Sakura fall */
+/* OGS profile theme — Nexus Alpha / mode jour et mode nuit */
 
 :root {
   --navy: #10145f;
@@ -7,21 +7,22 @@
   --coral-soft: #ffc0b2;
   --pink: #ff8fa3;
   --white: #ffffff;
+  --black: #17172b;
   --radius: 18px;
 }
 
-/* Fond d'écran */
+/* MODE JOUR — image claire */
 .container {
   max-width: none !important;
   min-height: 100vh;
   position: relative;
   isolation: isolate;
-  background-image: url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
+  background-image: url("https://i.ibb.co/mFPPB94R/Nexus-corail-white.png");
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  color: var(--white) !important;
+  color: var(--black) !important;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
 }
 
@@ -29,107 +30,42 @@ html,
 body {
   min-height: 100%;
   background: transparent !important;
-  color: var(--white) !important;
+  color: var(--black) !important;
 }
 
 .container-fluid {
   background: transparent !important;
 }
 
-/* Couche d'animation Sakura */
+/* Animation Sakura */
 .container::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 20;
   pointer-events: none;
-  overflow: hidden;
-  opacity: .95;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='92' height='150' viewBox='0 0 92 150'%3E%3Cg fill='%23ffc0b2' stroke='%23ff6f61' stroke-width='1.2'%3E%3Cpath d='M21 18c-7-8-18-3-16 5 2 7 10 8 16 4 0 8 7 12 13 8 6-4 3-14-5-17 4-7-2-14-8-13-6 1-7 7-5 13-3-1-4-1-5 0z'/%3E%3C/g%3E%3Cg fill='%23ff8fa3' opacity='.8'%3E%3Cpath d='M69 101c-5-6-13-2-12 4 1 6 7 7 12 4 0 6 5 9 9 6 5-3 2-9-3-12 3-5-1-10-6-9-4 1-5 5-3 9-2-1-3-1-4-2z'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 180px 290px, 240px 390px;
-  animation: sakura-fall 18s linear infinite;
-  transform: translate3d(0, -320px, 0);
-}
-
-/* Deuxième couche avec vitesse et direction différentes */
-.container::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 21;
-  pointer-events: none;
   opacity: .7;
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='170' viewBox='0 0 130 170'%3E%3Cg fill='%23fff0ed' stroke='%23ff8fa3' stroke-width='1'%3E%3Cpath d='M32 28c-6-7-15-2-14 5 1 6 8 8 14 4 0 7 6 10 11 6 5-4 2-11-4-14 3-6-2-11-7-10-5 1-6 6-4 10-2-1-3-1-4-1z'/%3E%3Cpath d='M104 132c-4-5-11-2-10 4 1 5 6 6 10 3 0 5 5 8 9 5 4-3 2-8-3-11 2-4-1-8-5-8-4 1-5 4-3 8-2-1-3-1-4-1z'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 250px 340px;
-  animation: sakura-drift 25s linear infinite;
-  transform: translate3d(0, -400px, 0);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='460' height='720' viewBox='0 0 460 720'%3E%3Cg fill='%23f7c6c0' stroke='%23d9898d' stroke-width='1' opacity='.9'%3E%3Cpath d='M74 92c-13-12-31-4-28 11 2 11 13 16 25 12-2 13 10 22 20 16 10-6 8-20-3-27 10-8 5-22-6-23-8-1-12 5-13 11-1 0-2 0-4 0z'/%3E%3Cpath d='M319 248c-9-9-23-3-21 8 1 9 10 13 19 10-1 10 7 17 15 13 8-5 6-16-2-22 8-7 4-17-5-18-6-1-9 4-10 9-2-1-3-1-4 0z'/%3E%3Cpath d='M186 501c-10-10-24-3-22 9 2 9 11 13 20 10-2 11 8 18 16 13 8-5 6-17-3-23 8-7 4-18-5-19-7-1-10 4-11 10-1 0-3 0-4 0z'/%3E%3Cpath d='M405 624c-7-7-18-2-16 7 1 7 8 10 15 8-1 8 6 13 12 10 6-4 5-12-2-17 6-5 3-13-4-14-5 0-7 3-8 7-1-1-2-1-3-1z'/%3E%3C/g%3E%3Cg fill='%23fff2ee' opacity='.9'%3E%3Cellipse cx='116' cy='343' rx='3' ry='7' transform='rotate(28 116 343)'/%3E%3Cellipse cx='270' cy='91' rx='3' ry='8' transform='rotate(-35 270 91)'/%3E%3Cellipse cx='380' cy='430' rx='3' ry='7' transform='rotate(24 380 430)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 920px 1440px;
+  background-repeat: repeat;
+  animation: sakura-fall 28s linear infinite;
 }
 
 @keyframes sakura-fall {
-  0% {
-    transform: translate3d(-3%, -320px, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(4%, 25vh, 0) rotate(80deg);
-  }
-  50% {
-    transform: translate3d(-2%, 52vh, 0) rotate(170deg);
-  }
-  75% {
-    transform: translate3d(6%, 78vh, 0) rotate(255deg);
-  }
-  100% {
-    transform: translate3d(-4%, 115vh, 0) rotate(360deg);
-  }
+  0% { transform: translate3d(-2%, -30%, 0) rotate(-3deg); }
+  35% { transform: translate3d(2%, 25%, 0) rotate(3deg); }
+  70% { transform: translate3d(-1%, 65%, 0) rotate(-2deg); }
+  100% { transform: translate3d(2%, 115%, 0) rotate(4deg); }
 }
 
-@keyframes sakura-drift {
-  0% {
-    transform: translate3d(8%, -400px, 0) rotate(15deg);
-  }
-  30% {
-    transform: translate3d(-7%, 30vh, 0) rotate(100deg);
-  }
-  60% {
-    transform: translate3d(9%, 63vh, 0) rotate(205deg);
-  }
-  100% {
-    transform: translate3d(-8%, 115vh, 0) rotate(390deg);
-  }
-}
-
-/* Respect des préférences d'accessibilité */
 @media (prefers-reduced-motion: reduce) {
-  .container::before,
   .container::after {
     animation: none !important;
     opacity: 0 !important;
   }
 }
 
-/* Texte sans ombre */
-.container,
-.container p,
-.container span,
-.container div,
-.container label,
-.container li,
-.container td,
-.container th,
-.container small,
-.container h1,
-.container h2,
-.container h3,
-.container h4,
-.container h5,
-.container h6,
-.container a,
-.container a:visited {
-  text-shadow: none !important;
-}
-
+/* Texte du mode jour */
 .container,
 .container p,
 .container span,
@@ -139,7 +75,8 @@ body {
 .container td,
 .container th,
 .container small {
-  color: var(--white) !important;
+  color: var(--black) !important;
+  text-shadow: none !important;
 }
 
 .container h1,
@@ -154,31 +91,33 @@ body {
 .user-profile h1,
 .user-profile h2,
 .user-profile h3 {
-  color: var(--coral-soft) !important;
+  color: var(--navy) !important;
   font-weight: 800;
+  text-shadow: none !important;
 }
 
 a,
 .container a,
 .container a:visited {
-  color: var(--coral-soft) !important;
+  color: var(--coral) !important;
   font-weight: 700;
+  text-shadow: none !important;
 }
 
 a:hover,
 a:focus,
 .container a:hover,
 .container a:focus {
-  color: var(--white) !important;
+  color: var(--navy) !important;
   text-decoration: underline;
 }
 
-/* Panneaux */
+/* Panneaux du mode jour */
 .panel,
 .card,
 .well {
-  background: rgba(255, 255, 255, .78) !important;
-  border: 1px solid rgba(255, 192, 178, .75) !important;
+  background: rgba(255, 255, 255, .82) !important;
+  border: 1px solid rgba(16, 20, 95, .18) !important;
   border-radius: var(--radius) !important;
   box-shadow: none !important;
   backdrop-filter: blur(5px);
@@ -196,14 +135,14 @@ a:focus,
 .well span,
 .well div,
 .well label {
-  color: var(--deep-navy) !important;
+  color: var(--black) !important;
   text-shadow: none !important;
 }
 
 .panel-heading,
 .card-header {
   color: var(--white) !important;
-  background: linear-gradient(135deg, var(--coral), var(--pink)) !important;
+  background: linear-gradient(135deg, var(--navy), #3948a7) !important;
   border-radius: var(--radius) var(--radius) 0 0 !important;
   text-shadow: none !important;
 }
@@ -212,7 +151,7 @@ a:focus,
 .navbar,
 .navbar-default,
 .navbar-inverse {
-  background: linear-gradient(90deg, var(--deep-navy), #5d174d 58%, var(--coral)) !important;
+  background: linear-gradient(90deg, var(--deep-navy), var(--navy) 58%, var(--coral)) !important;
   border: 0 !important;
   box-shadow: none !important;
 }
@@ -233,7 +172,7 @@ a:focus,
 .btn,
 button,
 input[type="submit"] {
-  border: 1px solid rgba(255, 255, 255, .5) !important;
+  border: 1px solid rgba(16, 20, 95, .25) !important;
   border-radius: 999px !important;
   background: linear-gradient(135deg, var(--coral), var(--pink)) !important;
   color: var(--white) !important;
@@ -244,8 +183,8 @@ input[type="submit"] {
 .btn:hover,
 button:hover,
 input[type="submit"]:hover {
-  background: var(--white) !important;
-  color: var(--coral) !important;
+  background: var(--navy) !important;
+  color: var(--white) !important;
 }
 
 /* Avatar */
@@ -261,13 +200,13 @@ img[src*="avatar"] {
 
 /* Onglets */
 .nav-tabs {
-  border-bottom: 2px solid rgba(255, 192, 178, .8) !important;
+  border-bottom: 2px solid rgba(16, 20, 95, .25) !important;
 }
 
 .nav-tabs > li > a {
   border: 0 !important;
   border-radius: 999px 999px 0 0 !important;
-  color: var(--white) !important;
+  color: var(--navy) !important;
   text-shadow: none !important;
 }
 
@@ -280,8 +219,8 @@ img[src*="avatar"] {
 /* Tableaux */
 .table,
 table {
-  background: rgba(255, 255, 255, .78) !important;
-  color: var(--deep-navy) !important;
+  background: rgba(255, 255, 255, .84) !important;
+  color: var(--black) !important;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: none !important;
@@ -289,7 +228,7 @@ table {
 
 .table > thead > tr > th,
 thead th {
-  background: var(--coral) !important;
+  background: var(--navy) !important;
   color: var(--white) !important;
 }
 
@@ -297,17 +236,17 @@ thead th {
 .table th,
 tbody td,
 tbody th {
-  color: var(--deep-navy) !important;
+  color: var(--black) !important;
   text-shadow: none !important;
 }
 
 .table-striped > tbody > tr:nth-of-type(odd),
 tbody tr:nth-child(odd) {
-  background: rgba(255, 192, 178, .24) !important;
+  background: rgba(255, 192, 178, .22) !important;
 }
 
 tbody tr:hover {
-  background: rgba(255, 192, 178, .45) !important;
+  background: rgba(255, 192, 178, .42) !important;
 }
 
 /* Champs */
@@ -315,10 +254,10 @@ tbody tr:hover {
 input,
 textarea,
 select {
-  border: 2px solid rgba(255, 111, 97, .65) !important;
+  border: 2px solid rgba(16, 20, 95, .28) !important;
   border-radius: 12px !important;
-  background: rgba(255, 255, 255, .9) !important;
-  color: var(--deep-navy) !important;
+  background: rgba(255, 255, 255, .94) !important;
+  color: var(--black) !important;
   text-shadow: none !important;
   box-shadow: none !important;
 }
@@ -326,7 +265,7 @@ select {
 .form-control::placeholder,
 input::placeholder,
 textarea::placeholder {
-  color: #a84958 !important;
+  color: #596080 !important;
 }
 
 .form-control:focus,
@@ -347,7 +286,7 @@ select:focus {
 
 .progress {
   height: 12px;
-  background: rgba(255, 255, 255, .55) !important;
+  background: rgba(16, 20, 95, .14) !important;
   border-radius: 999px !important;
   box-shadow: none !important;
 }
@@ -357,9 +296,143 @@ select:focus {
   border-radius: 999px;
 }
 
+/* MODE NUIT — image sombre */
+.dark-mode .container,
+.night-mode .container,
+body.dark-mode .container,
+body.night-mode .container,
+html.dark-mode .container,
+html.night-mode .container {
+  background-image: url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
+  color: var(--white) !important;
+}
+
+.dark-mode .container,
+.dark-mode .container p,
+.dark-mode .container span,
+.dark-mode .container div,
+.dark-mode .container label,
+.dark-mode .container li,
+.dark-mode .container td,
+.dark-mode .container th,
+.dark-mode .container small,
+.night-mode .container,
+.night-mode .container p,
+.night-mode .container span,
+.night-mode .container div,
+.night-mode .container label,
+.night-mode .container li,
+.night-mode .container td,
+.night-mode .container th,
+.night-mode .container small {
+  color: var(--white) !important;
+}
+
+.dark-mode .container h1,
+.dark-mode .container h2,
+.dark-mode .container h3,
+.dark-mode .container h4,
+.dark-mode .container h5,
+.dark-mode .container h6,
+.night-mode .container h1,
+.night-mode .container h2,
+.night-mode .container h3,
+.night-mode .container h4,
+.night-mode .container h5,
+.night-mode .container h6 {
+  color: var(--coral-soft) !important;
+}
+
+.dark-mode a,
+.dark-mode .container a,
+.night-mode a,
+.night-mode .container a {
+  color: var(--coral-soft) !important;
+}
+
+.dark-mode .panel,
+.dark-mode .card,
+.dark-mode .well,
+.night-mode .panel,
+.night-mode .card,
+.night-mode .well {
+  background: rgba(8, 11, 63, .78) !important;
+  border-color: rgba(255, 192, 178, .55) !important;
+}
+
+.dark-mode .panel p,
+.dark-mode .panel span,
+.dark-mode .panel div,
+.dark-mode .panel label,
+.dark-mode .card p,
+.dark-mode .card span,
+.dark-mode .card div,
+.dark-mode .card label,
+.dark-mode .well p,
+.dark-mode .well span,
+.dark-mode .well div,
+.dark-mode .well label,
+.night-mode .panel p,
+.night-mode .panel span,
+.night-mode .panel div,
+.night-mode .panel label,
+.night-mode .card p,
+.night-mode .card span,
+.night-mode .card div,
+.night-mode .card label,
+.night-mode .well p,
+.night-mode .well span,
+.night-mode .well div,
+.night-mode .well label {
+  color: var(--white) !important;
+}
+
+.dark-mode .nav-tabs > li > a,
+.night-mode .nav-tabs > li > a {
+  color: var(--white) !important;
+}
+
+.dark-mode .table,
+.dark-mode table,
+.night-mode .table,
+.night-mode table {
+  background: rgba(8, 11, 63, .78) !important;
+  color: var(--white) !important;
+}
+
+.dark-mode .table td,
+.dark-mode .table th,
+.dark-mode tbody td,
+.dark-mode tbody th,
+.night-mode .table td,
+.night-mode .table th,
+.night-mode tbody td,
+.night-mode tbody th {
+  color: var(--white) !important;
+}
+
+.dark-mode .form-control,
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select,
+.night-mode .form-control,
+.night-mode input,
+.night-mode textarea,
+.night-mode select {
+  background: rgba(8, 11, 63, .8) !important;
+  color: var(--white) !important;
+  border-color: rgba(255, 192, 178, .65) !important;
+}
+
+.dark-mode .form-control::placeholder,
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder,
+.night-mode .form-control::placeholder,
+.night-mode input::placeholder,
+.night-mode textarea::placeholder {
+  color: var(--coral-soft) !important;
+}
+
 @media (max-width: 768px) {
   .container {
-    background-position: 60% 0;
-    background-attachment: scroll;
-  }
-}
+    background-posit
