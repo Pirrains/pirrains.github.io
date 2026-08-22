@@ -1,257 +1,320 @@
 /*
- * OGS profile theme — floral portrait inspired
- * Palette: navy hair, turquoise background, coral flowers, cream skin tones.
- * Replace the avatar URL below with your own GitHub/raw image URL if desired.
+ * OGS profile theme — Japanese minimal / black & green
+ * Background: image hosted on ImgBB
  */
 
 :root {
-  --navy: #10145f;
-  --deep-navy: #080b3f;
-  --blue: #303ca1;
-  --turquoise: #72c4c1;
-  --turquoise-light: #d9eee1;
-  --coral: #f27d4f;
-  --coral-soft: #f6b6a2;
-  --cream: #fff4df;
-  --ink: #242452;
-  --white: #fffaf1;
-  --shadow: 0 12px 32px rgba(8, 11, 63, .22);
-  --radius: 18px;
+  --bg-image: url("https://i.ibb.co/HT0F1Qts/Logo-Tacju.jpg");
+  --ink: #111a16;
+  --black: #0b120f;
+  --green: #174f3b;
+  --green-light: #5f8f72;
+  --green-pale: #dfeadf;
+  --paper: rgba(250, 252, 247, .94);
+  --white: #ffffff;
+  --line: rgba(23, 79, 59, .22);
 }
 
-/* Page background */
+/* Base */
 html,
 body {
-  background:
-    radial-gradient(circle at 8% 12%, rgba(242, 125, 79, .35) 0 42px, transparent 44px),
-    radial-gradient(circle at 92% 18%, rgba(246, 182, 162, .55) 0 55px, transparent 57px),
-    linear-gradient(135deg, var(--turquoise-light), var(--turquoise) 48%, #4fa5ad);
-  color: var(--ink);
-  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  min-height: 100% !important;
+  margin: 0 !important;
+  background: #dfeadf !important;
+  color: var(--ink) !important;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", "Segoe UI", sans-serif !important;
 }
 
-body::before,
-body::after {
-  position: fixed;
-  z-index: -1;
-  pointer-events: none;
-  color: rgba(242, 125, 79, .32);
-  font-size: 90px;
-  line-height: 1;
-}
-
-body::before {
-  content: "✿";
-  top: 90px;
-  left: 2vw;
-  transform: rotate(-18deg);
-}
-
-body::after {
-  content: "✽";
-  right: 3vw;
-  bottom: 8vh;
-  transform: rotate(18deg);
-}
-
-/* Main OGS panels */
+/*
+ * Le fond est appliqué à plusieurs conteneurs pour être compatible avec
+ * les différentes structures de page OGS.
+ */
 .container,
 .container-fluid,
-.panel,
-.card,
-.well,
-.modal-content,
-.dropdown-menu {
-  border-color: rgba(16, 20, 95, .15) !important;
+main,
+[role="main"] {
+  background-color: transparent !important;
 }
 
-.panel,
-.card,
-.well {
-  background: rgba(255, 250, 241, .88) !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(8px);
+.container {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  background-image: var(--bg-image) !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
 }
 
-.panel-heading,
-.card-header {
-  color: var(--white) !important;
-  background: linear-gradient(135deg, var(--navy), var(--blue)) !important;
-  border-radius: var(--radius) var(--radius) 0 0 !important;
-  letter-spacing: .04em;
+/* Si OGS applique le fond au body, on conserve une couche de secours. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: var(--bg-image);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Header / navigation */
+/* Aucun pseudo-élément décoratif ne doit recouvrir la page. */
+.container::before,
+.container::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Navigation très épurée */
 .navbar,
 .navbar-default,
 .navbar-inverse {
-  background: linear-gradient(90deg, var(--deep-navy), var(--navy) 55%, var(--blue)) !important;
+  min-height: 52px !important;
+  background: rgba(11, 18, 15, .96) !important;
   border: 0 !important;
-  box-shadow: 0 5px 20px rgba(8, 11, 63, .28);
+  box-shadow: none !important;
 }
 
 .navbar a,
 .navbar-brand,
 .navbar-nav > li > a {
   color: var(--white) !important;
-  transition: color .2s ease, transform .2s ease;
+  font-weight: 600 !important;
+  letter-spacing: .02em;
 }
 
-.navbar-nav > li > a:hover,
-.navbar-brand:hover {
-  color: var(--coral-soft) !important;
-  transform: translateY(-1px);
+.navbar a:hover,
+.navbar-brand:hover,
+.navbar-nav > li > a:hover {
+  color: #a9cbaa !important;
 }
 
-/* Links and buttons */
-a {
-  color: var(--blue);
-  font-weight: 600;
+/* Cartes : effet papier japonais */
+.panel,
+.card,
+.well {
+  background: var(--paper) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(3px);
 }
 
-a:hover,
-a:focus {
-  color: var(--coral);
-}
-
-.btn,
-button,
-input[type="submit"] {
+.panel-heading,
+.card-header {
+  padding: 14px 18px !important;
+  background: var(--green) !important;
   border: 0 !important;
-  border-radius: 999px !important;
-  background: linear-gradient(135deg, var(--navy), var(--blue)) !important;
+  border-radius: 4px 4px 0 0 !important;
   color: var(--white) !important;
-  box-shadow: 0 5px 12px rgba(16, 20, 95, .2);
-  transition: transform .2s ease, box-shadow .2s ease;
+  font-weight: 600 !important;
+  letter-spacing: .04em;
 }
 
-.btn:hover,
-button:hover,
-input[type="submit"]:hover {
-  background: linear-gradient(135deg, var(--coral), #d85d45) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(216, 93, 69, .28);
+/* Typographie noire et verte */
+.container,
+.container p,
+.container span,
+.container div,
+.container label,
+.container li,
+.container td,
+.container th,
+.container small,
+.panel,
+.card,
+.well {
+  color: var(--ink) !important;
+  text-shadow: none !important;
 }
 
-/* Profile avatar — this targets common OGS avatar selectors */
-.user-avatar,
-.avatar,
-.profile-avatar,
-img[src*="avatar"] {
-  border: 5px solid var(--cream) !important;
-  box-shadow: 0 0 0 4px var(--coral), var(--shadow) !important;
-  border-radius: 50% !important;
-  object-fit: cover;
-}
-
-/* Profile page emphasis */
-.profile,
-.user-profile,
-[class*="profile"] {
-  color: var(--ink);
-}
-
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6,
 .profile h1,
 .profile h2,
 .profile h3,
 .user-profile h1,
 .user-profile h2,
 .user-profile h3 {
-  color: var(--navy) !important;
-  font-weight: 800;
+  margin-top: 1.1em;
+  color: var(--black) !important;
+  font-weight: 700 !important;
   letter-spacing: .02em;
+  line-height: 1.35;
+  text-shadow: none !important;
 }
 
-/* Tabs */
+.container h1::after,
+.container h2::after,
+.container h3::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-top: 8px;
+  background: var(--green-light);
+}
+
+a,
+a:visited,
+.container a,
+.container a:visited {
+  color: var(--green) !important;
+  font-weight: 600 !important;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-shadow: none !important;
+}
+
+a:hover,
+a:focus,
+.container a:hover,
+.container a:focus {
+  color: var(--black) !important;
+}
+
+/* Boutons minimalistes */
+.btn,
+button,
+input[type="submit"] {
+  min-height: 34px;
+  padding: 7px 16px !important;
+  border: 1px solid var(--green) !important;
+  border-radius: 3px !important;
+  background: var(--green) !important;
+  color: var(--white) !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+  background: var(--black) !important;
+  border-color: var(--black) !important;
+  color: var(--white) !important;
+}
+
+/* Avatar */
+.user-avatar,
+.avatar,
+.profile-avatar,
+img[src*="avatar"] {
+  border: 3px solid var(--white) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 2px var(--green) !important;
+  object-fit: cover !important;
+}
+
+/* Onglets */
 .nav-tabs {
-  border-bottom: 2px solid rgba(16, 20, 95, .18) !important;
+  border-bottom: 1px solid var(--line) !important;
 }
 
 .nav-tabs > li > a {
   border: 0 !important;
-  border-radius: 999px 999px 0 0 !important;
-  color: var(--navy) !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--green) !important;
 }
 
 .nav-tabs > li.active > a,
 .nav-tabs > li > a:hover {
-  background: var(--coral-soft) !important;
-  color: var(--deep-navy) !important;
+  border-bottom-color: var(--green) !important;
+  background: transparent !important;
+  color: var(--black) !important;
 }
 
-/* Tables and statistics */
+/* Tableaux */
 .table,
 table {
-  background: rgba(255, 250, 241, .72);
-  border-radius: 12px;
-  overflow: hidden;
+  background: rgba(250, 252, 247, .96) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 3px !important;
+  color: var(--ink) !important;
+  box-shadow: none !important;
 }
 
-.table > thead > tr > th,
+.table th,
 thead th {
-  background: var(--navy) !important;
+  background: var(--black) !important;
   color: var(--white) !important;
+  font-weight: 600 !important;
+}
+
+.table td,
+.table th,
+tbody td,
+tbody th {
+  color: var(--ink) !important;
 }
 
 .table-striped > tbody > tr:nth-of-type(odd),
 tbody tr:nth-child(odd) {
-  background: rgba(114, 196, 193, .16) !important;
+  background: rgba(223, 234, 223, .55) !important;
 }
 
 tbody tr:hover {
-  background: rgba(246, 182, 162, .3) !important;
+  background: rgba(169, 203, 170, .35) !important;
 }
 
-/* Form controls */
+/* Champs */
 .form-control,
 input,
 textarea,
 select {
-  border: 2px solid rgba(48, 60, 161, .22) !important;
-  border-radius: 12px !important;
-  background: rgba(255, 250, 241, .9) !important;
+  background: rgba(255, 255, 255, .96) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 3px !important;
   color: var(--ink) !important;
+  box-shadow: none !important;
 }
 
 .form-control:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--coral) !important;
-  box-shadow: 0 0 0 3px rgba(242, 125, 79, .2) !important;
+  border-color: var(--green) !important;
+  box-shadow: 0 0 0 2px rgba(95, 143, 114, .18) !important;
 }
 
-/* Badges, labels and progress elements */
+.form-control::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: #60756a !important;
+}
+
 .badge,
 .label {
-  border-radius: 999px !important;
-  background: var(--coral) !important;
+  border-radius: 3px !important;
+  background: var(--green) !important;
   color: var(--white) !important;
 }
 
 .progress {
-  height: 12px;
-  background: rgba(16, 20, 95, .12) !important;
-  border-radius: 999px !important;
+  height: 8px !important;
+  background: var(--green-pale) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .progress-bar {
-  background: linear-gradient(90deg, var(--coral), var(--blue)) !important;
-  border-radius: 999px;
+  background: var(--green) !important;
+  border-radius: 0 !important;
 }
 
-/* Responsive finishing touches */
+/* Responsive */
 @media (max-width: 768px) {
-  .panel,
-  .card,
-  .well {
-    border-radius: 13px !important;
-    box-shadow: 0 7px 20px rgba(8, 11, 63, .16);
-  }
-
-  body::before,
-  body::after {
-    font-size: 60px;
+  .container {
+    background-attachment: scroll !important;
+    background-position: 60% top !important;
   }
 }
