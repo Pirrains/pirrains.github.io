@@ -506,3 +506,26 @@ body nav a,
 body header a {
   color: #a0661c !important;
 }
+
+/* Tableaux : tout le texte en noir (dates, liens, rangs, résultats), sauf l'en-tête */
+html body table tbody,
+html body table tbody *,
+html body table tbody a,
+html body table tbody a:visited,
+html body table tbody td,
+html body table tbody td *,
+html body .table tbody td *,
+html body table td.date,
+html body table td.date *,
+html body table [class*="date"],
+html body table [class*="date"] * {
+  color: #17141c !important;
+  -webkit-text-fill-color: #17141c !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+html body table tbody a:hover {
+  color: #a0661c !important;
+  -webkit-text-fill-color: #a0661c !important;
+}
