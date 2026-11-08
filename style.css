@@ -15,7 +15,7 @@
   --profile-on-accent: #fffaf2;     /* texte sur boutons / bandeaux */
   --profile-header-bg: linear-gradient(135deg, #5b2d4f, #8a5a3c);
   --profile-panel: rgba(251, 246, 236, .84);  /* ivoire */
-  --profile-panel-text: #2b2430;
+  --profile-panel-text: #17141c;
   --profile-border: rgba(91, 45, 79, .22);
   --profile-input: rgba(255, 252, 246, .95);
   --profile-avatar-ring: #fbf6ec;
@@ -94,7 +94,7 @@ body.ogs-light {
   --profile-on-accent: #fffaf2;
   --profile-header-bg: linear-gradient(135deg, #5b2d4f, #8a5a3c);
   --profile-panel: rgba(251, 246, 236, .84);
-  --profile-panel-text: #2b2430;
+  --profile-panel-text: #17141c;
   --profile-border: rgba(91, 45, 79, .22);
   --profile-input: rgba(255, 252, 246, .95);
   --profile-avatar-ring: #fbf6ec;
@@ -519,8 +519,8 @@ html body table td.date,
 html body table td.date *,
 html body table [class*="date"],
 html body table [class*="date"] * {
-  color: #17141c !important;
-  -webkit-text-fill-color: #17141c !important;
+  color: var(--profile-panel-text) !important;
+  -webkit-text-fill-color: var(--profile-panel-text) !important;
   opacity: 1 !important;
   text-shadow: none !important;
 }
@@ -528,4 +528,52 @@ html body table [class*="date"] * {
 html body table tbody a:hover {
   color: #a0661c !important;
   -webkit-text-fill-color: #a0661c !important;
+}
+
+/* Cellules du tableau (OGS ne génère pas toujours de <tbody>) : dates et liens en noir */
+html body table td,
+html body table td *,
+html body table td a,
+html body table td a:visited {
+  color: var(--profile-panel-text) !important;
+  -webkit-text-fill-color: var(--profile-panel-text) !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+
+/* Cadres blancs OGS (classe .Card, avec majuscule) : texte foncé, sans ombrage */
+html body .Card,
+html body .Card *,
+html body [class*="Card"] *,
+html body [class*="card"] * {
+  color: var(--profile-panel-text) !important;
+  -webkit-text-fill-color: var(--profile-panel-text) !important;
+  text-shadow: none !important;
+}
+
+html body .Card h1, html body .Card h2, html body .Card h3,
+html body .Card h4, html body .Card h5, html body .Card h6,
+html body [class*="Card"] h1, html body [class*="Card"] h2, html body [class*="Card"] h3,
+html body [class*="Card"] h4, html body [class*="Card"] h5, html body [class*="Card"] h6 {
+  color: var(--profile-heading) !important;
+  -webkit-text-fill-color: var(--profile-heading) !important;
+}
+
+/* En-tête des tableaux : reste ivoire sur le bandeau prune */
+html body [class*="Card"] table th,
+html body [class*="Card"] table th *,
+html body table thead th,
+html body table thead th *,
+html body table tr th,
+html body table tr th * {
+  color: var(--profile-on-accent) !important;
+  -webkit-text-fill-color: var(--profile-on-accent) !important;
+  text-shadow: none !important;
+}
+
+html body .Card {
+  background: var(--profile-panel) !important;
+  border: 1px solid var(--profile-border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
 }
