@@ -20,9 +20,9 @@
   --profile-input: rgba(255, 252, 246, .95);
   --profile-avatar-ring: #fbf6ec;
   /* Texte posé directement sur l'image (hors panneaux) */
-  --profile-free-text: #fbf3e6;     /* ivoire */
-  --profile-free-heading: #f4b89c;  /* corail clair des chrysanthèmes */
-  --profile-free-link: #f3c97e;     /* or clair */
+  --profile-free-text: #f2d29b;     /* doré clair */
+  --profile-free-heading: #f7b48f;  /* corail clair des chrysanthèmes */
+  --profile-free-link: #fff1d6;     /* ivoire lumineux */
   --profile-free-shadow: 0 1px 2px rgba(15, 12, 28, .95), 0 0 10px rgba(15, 12, 28, .75);
 }
 
@@ -99,9 +99,9 @@ body.ogs-light {
   --profile-input: rgba(255, 252, 246, .95);
   --profile-avatar-ring: #fbf6ec;
   /* Texte posé directement sur l'image (hors panneaux) */
-  --profile-free-text: #fbf3e6;     /* ivoire */
-  --profile-free-heading: #f4b89c;  /* corail clair des chrysanthèmes */
-  --profile-free-link: #f3c97e;     /* or clair */
+  --profile-free-text: #f2d29b;     /* doré clair */
+  --profile-free-heading: #f7b48f;  /* corail clair des chrysanthèmes */
+  --profile-free-link: #fff1d6;     /* ivoire lumineux */
   --profile-free-shadow: 0 1px 2px rgba(15, 12, 28, .95), 0 0 10px rgba(15, 12, 28, .75);
 }
 
@@ -171,27 +171,27 @@ button,
 }
 
 /* Typographie : texte posé directement sur l'image de fond */
-.container,
-.container p,
-.container span,
-.container div,
-.container label,
-.container li,
-.container td,
-.container th,
-.container small,
-.container .text-muted {
+body,
+body p,
+body span,
+body div,
+body label,
+body li,
+body td,
+body th,
+body small,
+body .text-muted {
   color: var(--profile-free-text) !important;
   text-shadow: var(--profile-free-shadow) !important;
 }
 
 /* Titres : la hiérarchie passe par la taille et l'espacement, pas par le gras */
-.container h1,
-.container h2,
-.container h3,
-.container h4,
-.container h5,
-.container h6,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
 .profile h1,
 .profile h2,
 .profile h3,
@@ -203,15 +203,15 @@ button,
   text-shadow: var(--profile-free-shadow) !important;
 }
 
-.container h1,
-.container h2 {
+body h1,
+body h2 {
   font-variant: small-caps;
   letter-spacing: .08em;
 }
 
 a,
-.container a,
-.container a:visited {
+body a,
+body a:visited {
   color: var(--profile-free-link) !important;
   text-decoration: none;
   text-shadow: var(--profile-free-shadow) !important;
@@ -219,45 +219,45 @@ a,
 
 a:hover,
 a:focus,
-.container a:hover,
-.container a:focus {
+body a:hover,
+body a:focus {
   color: var(--profile-free-text) !important;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 /* Texte à l'intérieur des panneaux, cartes et tableaux : couleurs foncées, sans halo */
-.container .panel *,
-.container .card *,
-.container .well *,
-.container table *,
-.container .table * {
+body .panel *,
+body .card *,
+body .well *,
+body table *,
+body .table * {
   color: var(--profile-panel-text) !important;
   text-shadow: none !important;
 }
 
-.container .panel h1, .container .panel h2, .container .panel h3,
-.container .panel h4, .container .panel h5, .container .panel h6,
-.container .card h1, .container .card h2, .container .card h3,
-.container .card h4, .container .card h5, .container .card h6,
-.container .well h1, .container .well h2, .container .well h3,
-.container .well h4, .container .well h5, .container .well h6 {
+body .panel h1, body .panel h2, body .panel h3,
+body .panel h4, body .panel h5, body .panel h6,
+body .card h1, body .card h2, body .card h3,
+body .card h4, body .card h5, body .card h6,
+body .well h1, body .well h2, body .well h3,
+body .well h4, body .well h5, body .well h6 {
   color: var(--profile-heading) !important;
 }
 
-.container .panel a,
-.container .card a,
-.container .well a,
-.container table a,
-.container .table a {
+body .panel a,
+body .card a,
+body .well a,
+body table a,
+body .table a {
   color: var(--profile-link) !important;
 }
 
-.container .panel a:hover,
-.container .card a:hover,
-.container .well a:hover,
-.container table a:hover,
-.container .table a:hover {
+body .panel a:hover,
+body .card a:hover,
+body .well a:hover,
+body table a:hover,
+body .table a:hover {
   color: var(--profile-link-hover) !important;
 }
 
@@ -299,10 +299,10 @@ a:focus,
 
 .panel-heading *,
 .card-header *,
-.container .panel .panel-heading,
-.container .panel .panel-heading *,
-.container .card .card-header,
-.container .card .card-header * {
+body .panel .panel-heading,
+body .panel .panel-heading *,
+body .card .card-header,
+body .card .card-header * {
   color: var(--profile-on-accent) !important;
   text-shadow: none !important;
 }
@@ -339,13 +339,13 @@ input[type="submit"] {
   box-shadow: none !important;
 }
 
-.container .btn,
-.container .btn *,
-.container button,
-.container button *,
-.container .badge,
-.container .label,
-.container .nav-tabs > li.active > a {
+body .btn,
+body .btn *,
+body button,
+body button *,
+body .badge,
+body .label,
+body .nav-tabs > li.active > a {
   color: var(--profile-on-accent) !important;
   text-shadow: none !important;
 }
@@ -400,9 +400,9 @@ thead th {
   letter-spacing: .04em;
 }
 
-.container thead th,
-.container thead th *,
-.container .table > thead > tr > th {
+body thead th,
+body thead th *,
+body .table > thead > tr > th {
   color: var(--profile-on-accent) !important;
   text-shadow: none !important;
 }
@@ -467,4 +467,42 @@ select:focus {
     background-position: 60% 0;
     background-attachment: scroll;
   }
+}
+
+/* Bandeau du haut et menus blancs d'OGS : on garde un texte foncé, sans halo */
+body .NavBar,
+body .NavBar *,
+body nav,
+body nav *,
+body header,
+body header *,
+body .dropdown-menu,
+body .dropdown-menu *,
+body .popover,
+body .popover *,
+body .Modal,
+body .Modal *,
+body .modal,
+body .modal * {
+  text-shadow: none !important;
+}
+
+body .NavBar,
+body .NavBar span,
+body .NavBar div,
+body nav span,
+body nav div,
+body header span,
+body header div,
+body .dropdown-menu *,
+body .popover *,
+body .Modal *,
+body .modal * {
+  color: #2b2430 !important;
+}
+
+body .NavBar a,
+body nav a,
+body header a {
+  color: #a0661c !important;
 }
