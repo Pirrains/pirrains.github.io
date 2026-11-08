@@ -1,33 +1,27 @@
-/* OGS profile theme — Nexus Alpha / thèmes Light, Dark et Auto */
+/* OGS profile theme — Pierrot / thèmes Light (chrysanthèmes), Dark (gothique) et Auto */
 
 :root {
-  --navy: #10145f;
-  --deep-navy: #080b3f;
-  --coral: #ff6f61;
-  --coral-soft: #ffc0b2;
-  --pink: #ff8fa3;
-  --white: #ffffff;
-  --black: #17172b;
-  --radius: 18px;
+  --radius: 16px;
 
-  /* Variables de thème OGS : elles suivent le thème actif de l'application */
-  --profile-bg-image: url("https://i.ibb.co/mFPPB94R/Nexus-corail-white.png");
-  --profile-text: var(--black);
-  --profile-heading: var(--navy);
-  --profile-link: var(--coral);
-  --profile-panel: rgba(255, 255, 255, .82);
-  --profile-panel-text: var(--black);
-  --profile-border: rgba(16, 20, 95, .18);
-  --profile-input: rgba(255, 255, 255, .94);
+  /* Thème JOUR par défaut : Pierrot parmi les chrysanthèmes */
+  --profile-bg-image: url("https://i.ibb.co/TpYNVNp/Portrait-Pierrot-parmi-les-chrysanthe-mes.png");
+  --profile-text: #2b2430;          /* encre prune très foncée */
+  --profile-muted: #6e6270;         /* texte secondaire */
+  --profile-heading: #5b2d4f;       /* prune */
+  --profile-link: #a0661c;          /* or de chrysanthème */
+  --profile-link-hover: #5b2d4f;
+  --profile-accent: #a0661c;
+  --profile-accent-2: #c98f3a;
+  --profile-on-accent: #fffaf2;     /* texte sur boutons / bandeaux */
+  --profile-header-bg: linear-gradient(135deg, #5b2d4f, #8a5a3c);
+  --profile-panel: rgba(251, 246, 236, .84);  /* ivoire */
+  --profile-panel-text: #2b2430;
+  --profile-border: rgba(91, 45, 79, .22);
+  --profile-input: rgba(255, 252, 246, .95);
+  --profile-avatar-ring: #fbf6ec;
 }
 
-/*
- * OGS utilise des thèmes d'interface, pas forcément .dark-mode/.night-mode.
- * Ces sélecteurs couvrent les variantes theme-dark / theme-light et les
- * attributs data-theme généralement utilisés par les applications web.
- */
-
-/* Thème DARK : bouton lune */
+/* Thème DARK : bouton lune — Pierrot gothique */
 html.theme-dark,
 body.theme-dark,
 html.dark,
@@ -41,35 +35,31 @@ body[data-theme-name="dark"],
 html[data-bs-theme="dark"],
 body[data-bs-theme="dark"],
 html.ogs-dark,
-body.ogs-dark {
-  --profile-bg-image: url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
-  --profile-text: var(--white);
-  --profile-heading: var(--coral-soft);
-  --profile-link: var(--coral-soft);
-  --profile-panel: rgba(8, 11, 63, .78);
-  --profile-panel-text: var(--white);
-  --profile-border: rgba(255, 192, 178, .55);
-  --profile-input: rgba(8, 11, 63, .8);
-}
-
-/* Compatibilité avec des classes appliquées sur un wrapper OGS */
+body.ogs-dark,
 .theme-dark .container,
 .dark-theme .container,
 .theme-dark .profile,
 .dark-theme .profile,
 [data-theme="dark"] .container,
 [data-theme="dark"] .profile {
-  --profile-bg-image: url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
-  --profile-text: var(--white);
-  --profile-heading: var(--coral-soft);
-  --profile-link: var(--coral-soft);
-  --profile-panel: rgba(8, 11, 63, .78);
-  --profile-panel-text: var(--white);
-  --profile-border: rgba(255, 192, 178, .55);
-  --profile-input: rgba(8, 11, 63, .8);
+  --profile-bg-image: url("https://i.ibb.co/1YmKhkk6/Portrait-gothique-d-une-Pierrot-sanglante.png");
+  --profile-text: #f1e9e1;          /* ivoire */
+  --profile-muted: #b9aaa6;
+  --profile-heading: #e8c9c0;       /* ivoire rosé */
+  --profile-link: #e04848;          /* rouge sang lisible */
+  --profile-link-hover: #f5ebe0;
+  --profile-accent: #8e1420;        /* rouge sang profond */
+  --profile-accent-2: #c0283a;
+  --profile-on-accent: #f5ebe0;
+  --profile-header-bg: linear-gradient(135deg, #1a0a0e, #8e1420);
+  --profile-panel: rgba(10, 7, 9, .80);
+  --profile-panel-text: #f1e9e1;
+  --profile-border: rgba(192, 40, 58, .45);
+  --profile-input: rgba(18, 10, 12, .85);
+  --profile-avatar-ring: #1a0a0e;
 }
 
-/* Thème LIGHT : bouton soleil */
+/* Thème LIGHT : bouton soleil — Pierrot parmi les chrysanthèmes */
 html.theme-light,
 body.theme-light,
 html.light,
@@ -84,40 +74,41 @@ html[data-bs-theme="light"],
 body[data-bs-theme="light"],
 html.ogs-light,
 body.ogs-light {
-  --profile-bg-image: url("https://i.ibb.co/mFPPB94R/Nexus-corail-white.png");
-  --profile-text: var(--black);
-  --profile-heading: var(--navy);
-  --profile-link: var(--coral);
-  --profile-panel: rgba(255, 255, 255, .82);
-  --profile-panel-text: var(--black);
-  --profile-border: rgba(16, 20, 95, .18);
-  --profile-input: rgba(255, 255, 255, .94);
+  --profile-bg-image: url("https://i.ibb.co/TpYNVNp/Portrait-Pierrot-parmi-les-chrysanthe-mes.png");
+  --profile-text: #2b2430;
+  --profile-muted: #6e6270;
+  --profile-heading: #5b2d4f;
+  --profile-link: #a0661c;
+  --profile-link-hover: #5b2d4f;
+  --profile-accent: #a0661c;
+  --profile-accent-2: #c98f3a;
+  --profile-on-accent: #fffaf2;
+  --profile-header-bg: linear-gradient(135deg, #5b2d4f, #8a5a3c);
+  --profile-panel: rgba(251, 246, 236, .84);
+  --profile-panel-text: #2b2430;
+  --profile-border: rgba(91, 45, 79, .22);
+  --profile-input: rgba(255, 252, 246, .95);
+  --profile-avatar-ring: #fbf6ec;
 }
 
 /* Mode AUTO : suit le réglage clair/sombre de l'ordinateur */
 @media (prefers-color-scheme: dark) {
   :root {
-    --profile-bg-image: url("https://i.ibb.co/qLgkWGWy/Nexus-corail.jpg");
-    --profile-text: var(--white);
-    --profile-heading: var(--coral-soft);
-    --profile-link: var(--coral-soft);
-    --profile-panel: rgba(8, 11, 63, .78);
-    --profile-panel-text: var(--white);
-    --profile-border: rgba(255, 192, 178, .55);
-    --profile-input: rgba(8, 11, 63, .8);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --profile-bg-image: url("https://i.ibb.co/mFPPB94R/Nexus-corail-white.png");
-    --profile-text: var(--black);
-    --profile-heading: var(--navy);
-    --profile-link: var(--coral);
-    --profile-panel: rgba(255, 255, 255, .82);
-    --profile-panel-text: var(--black);
-    --profile-border: rgba(16, 20, 95, .18);
-    --profile-input: rgba(255, 255, 255, .94);
+    --profile-bg-image: url("https://i.ibb.co/1YmKhkk6/Portrait-gothique-d-une-Pierrot-sanglante.png");
+    --profile-text: #f1e9e1;
+    --profile-muted: #b9aaa6;
+    --profile-heading: #e8c9c0;
+    --profile-link: #e04848;
+    --profile-link-hover: #f5ebe0;
+    --profile-accent: #8e1420;
+    --profile-accent-2: #c0283a;
+    --profile-on-accent: #f5ebe0;
+    --profile-header-bg: linear-gradient(135deg, #1a0a0e, #8e1420);
+    --profile-panel: rgba(10, 7, 9, .80);
+    --profile-panel-text: #f1e9e1;
+    --profile-border: rgba(192, 40, 58, .45);
+    --profile-input: rgba(18, 10, 12, .85);
+    --profile-avatar-ring: #1a0a0e;
   }
 }
 
@@ -140,69 +131,25 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: var(--profile-text) !important;
-  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  font-family: Georgia, "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
 }
 
 .container-fluid {
   background: transparent !important;
 }
 
-/* Animation Sakura */
-.container::before,
-.container::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 20;
-  pointer-events: none;
-  background-repeat: no-repeat;
-  opacity: .88;
-}
-
-.container::before {
-  background-image:
-    url("https://i.ibb.co/nqmSwK7z/S1.png"),
-    url("https://i.ibb.co/B28FX6ym/S2.png"),
-    url("https://i.ibb.co/BVm3z6tw/S3.png"),
-    url("https://i.ibb.co/F4bhqqPn/S5.png"),
-    url("https://i.ibb.co/6Rj1cKTy/S4.png");
-  background-position: 7% -12%, 26% -28%, 49% -18%, 73% -34%, 94% -9%;
-  background-size: 28px auto, 42px auto, 33px auto, 48px auto, 25px auto;
-  animation: sakura-layer-one 24s linear infinite;
-}
-
-.container::after {
-  opacity: .62;
-  background-image:
-    url("https://i.ibb.co/BVm3z6tw/S3.png"),
-    url("https://i.ibb.co/6Rj1cKTy/S4.png"),
-    url("https://i.ibb.co/nqmSwK7z/S1.png");
-  background-position: 16% -42%, 61% -22%, 87% -51%;
-  background-size: 22px auto, 31px auto, 38px auto;
-  animation: sakura-layer-two 31s linear infinite;
-}
-
-@keyframes sakura-layer-one {
-  0% { transform: translate3d(-2%, -8%, 0) rotate(0deg); }
-  25% { transform: translate3d(3%, 25%, 0) rotate(90deg); }
-  50% { transform: translate3d(-3%, 53%, 0) rotate(185deg); }
-  75% { transform: translate3d(2%, 79%, 0) rotate(275deg); }
-  100% { transform: translate3d(-2%, 112%, 0) rotate(360deg); }
-}
-
-@keyframes sakura-layer-two {
-  0% { transform: translate3d(3%, -12%, 0) rotate(15deg); }
-  30% { transform: translate3d(-4%, 27%, 0) rotate(105deg); }
-  65% { transform: translate3d(4%, 67%, 0) rotate(220deg); }
-  100% { transform: translate3d(-3%, 116%, 0) rotate(390deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .container::before,
-  .container::after {
-    animation: none !important;
-    opacity: 0 !important;
-  }
+/* Aucune écriture en gras, partout */
+html *,
+b,
+strong,
+th,
+.navbar-brand,
+.btn,
+button,
+.badge,
+.label {
+  font-weight: 400 !important;
+  font-synthesis: none;
 }
 
 /* Typographie dynamique */
@@ -213,12 +160,17 @@ body {
 .container label,
 .container li,
 .container td,
-.container th,
-.container small {
+.container th {
   color: var(--profile-text) !important;
   text-shadow: none !important;
 }
 
+.container small,
+.container .text-muted {
+  color: var(--profile-muted) !important;
+}
+
+/* Titres : la hiérarchie passe par la taille et l'espacement, pas par le gras */
 .container h1,
 .container h2,
 .container h3,
@@ -232,15 +184,21 @@ body {
 .user-profile h2,
 .user-profile h3 {
   color: var(--profile-heading) !important;
-  font-weight: 800;
+  letter-spacing: .04em;
   text-shadow: none !important;
+}
+
+.container h1,
+.container h2 {
+  font-variant: small-caps;
+  letter-spacing: .08em;
 }
 
 a,
 .container a,
 .container a:visited {
   color: var(--profile-link) !important;
-  font-weight: 700;
+  text-decoration: none;
   text-shadow: none !important;
 }
 
@@ -248,8 +206,9 @@ a:hover,
 a:focus,
 .container a:hover,
 .container a:focus {
-  color: var(--profile-heading) !important;
+  color: var(--profile-link-hover) !important;
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* Panneaux dynamiques */
@@ -281,16 +240,22 @@ a:focus,
 
 .panel-heading,
 .card-header {
-  color: var(--white) !important;
-  background: linear-gradient(135deg, var(--navy), #3948a7) !important;
+  color: var(--profile-on-accent) !important;
+  background: var(--profile-header-bg) !important;
   border-radius: var(--radius) var(--radius) 0 0 !important;
+  letter-spacing: .05em;
   text-shadow: none !important;
+}
+
+.panel-heading *,
+.card-header * {
+  color: var(--profile-on-accent) !important;
 }
 
 .navbar,
 .navbar-default,
 .navbar-inverse {
-  background: linear-gradient(90deg, var(--deep-navy), var(--navy) 58%, var(--coral)) !important;
+  background: var(--profile-header-bg) !important;
   border: 0 !important;
   box-shadow: none !important;
 }
@@ -298,22 +263,23 @@ a:focus,
 .navbar a,
 .navbar-brand,
 .navbar-nav > li > a {
-  color: var(--white) !important;
+  color: var(--profile-on-accent) !important;
   text-shadow: none !important;
 }
 
 .navbar-nav > li > a:hover,
 .navbar-brand:hover {
-  color: var(--coral-soft) !important;
+  color: var(--profile-accent-2) !important;
 }
 
 .btn,
 button,
 input[type="submit"] {
-  border: 1px solid rgba(16, 20, 95, .25) !important;
+  border: 1px solid var(--profile-border) !important;
   border-radius: 999px !important;
-  background: linear-gradient(135deg, var(--coral), var(--pink)) !important;
-  color: var(--white) !important;
+  background: linear-gradient(135deg, var(--profile-accent), var(--profile-accent-2)) !important;
+  color: var(--profile-on-accent) !important;
+  letter-spacing: .03em;
   text-shadow: none !important;
   box-shadow: none !important;
 }
@@ -321,22 +287,22 @@ input[type="submit"] {
 .btn:hover,
 button:hover,
 input[type="submit"]:hover {
-  background: var(--navy) !important;
-  color: var(--white) !important;
+  background: var(--profile-heading) !important;
+  color: var(--profile-panel) !important;
 }
 
 .user-avatar,
 .avatar,
 .profile-avatar,
 img[src*="avatar"] {
-  border: 5px solid var(--white) !important;
-  box-shadow: 0 0 0 4px var(--coral) !important;
+  border: 5px solid var(--profile-avatar-ring) !important;
+  box-shadow: 0 0 0 3px var(--profile-accent) !important;
   border-radius: 50% !important;
   object-fit: cover;
 }
 
 .nav-tabs {
-  border-bottom: 2px solid var(--profile-border) !important;
+  border-bottom: 1px solid var(--profile-border) !important;
 }
 
 .nav-tabs > li > a {
@@ -348,8 +314,8 @@ img[src*="avatar"] {
 
 .nav-tabs > li.active > a,
 .nav-tabs > li > a:hover {
-  background: var(--coral) !important;
-  color: var(--white) !important;
+  background: var(--profile-accent) !important;
+  color: var(--profile-on-accent) !important;
 }
 
 .table,
@@ -363,8 +329,9 @@ table {
 
 .table > thead > tr > th,
 thead th {
-  background: var(--navy) !important;
-  color: var(--white) !important;
+  background: var(--profile-header-bg) !important;
+  color: var(--profile-on-accent) !important;
+  letter-spacing: .04em;
 }
 
 .table td,
@@ -372,6 +339,7 @@ thead th {
 tbody td,
 tbody th {
   color: var(--profile-panel-text) !important;
+  border-color: var(--profile-border) !important;
   text-shadow: none !important;
 }
 
@@ -379,7 +347,7 @@ tbody th {
 input,
 textarea,
 select {
-  border: 2px solid var(--profile-border) !important;
+  border: 1px solid var(--profile-border) !important;
   border-radius: 12px !important;
   background: var(--profile-input) !important;
   color: var(--profile-panel-text) !important;
@@ -390,34 +358,34 @@ select {
 .form-control::placeholder,
 input::placeholder,
 textarea::placeholder {
-  color: var(--profile-link) !important;
+  color: var(--profile-muted) !important;
 }
 
 .form-control:focus,
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--coral) !important;
+  border-color: var(--profile-accent-2) !important;
   box-shadow: none !important;
 }
 
 .badge,
 .label {
   border-radius: 999px !important;
-  background: var(--coral) !important;
-  color: var(--white) !important;
+  background: var(--profile-accent) !important;
+  color: var(--profile-on-accent) !important;
   text-shadow: none !important;
 }
 
 .progress {
-  height: 12px;
+  height: 10px;
   background: var(--profile-border) !important;
   border-radius: 999px !important;
   box-shadow: none !important;
 }
 
 .progress-bar {
-  background: linear-gradient(90deg, var(--coral), var(--pink)) !important;
+  background: linear-gradient(90deg, var(--profile-accent), var(--profile-accent-2)) !important;
   border-radius: 999px;
 }
 
