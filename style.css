@@ -19,6 +19,11 @@
   --profile-border: rgba(91, 45, 79, .22);
   --profile-input: rgba(255, 252, 246, .95);
   --profile-avatar-ring: #fbf6ec;
+  /* Texte posé directement sur l'image (hors panneaux) */
+  --profile-free-text: #fbf3e6;     /* ivoire */
+  --profile-free-heading: #f4b89c;  /* corail clair des chrysanthèmes */
+  --profile-free-link: #f3c97e;     /* or clair */
+  --profile-free-shadow: 0 1px 2px rgba(15, 12, 28, .95), 0 0 10px rgba(15, 12, 28, .75);
 }
 
 /* Thème DARK : bouton lune — Pierrot gothique */
@@ -57,6 +62,10 @@ body.ogs-dark,
   --profile-border: rgba(192, 40, 58, .45);
   --profile-input: rgba(18, 10, 12, .85);
   --profile-avatar-ring: #1a0a0e;
+  --profile-free-text: #f1e9e1;
+  --profile-free-heading: #e8c9c0;
+  --profile-free-link: #ff6b6b;
+  --profile-free-shadow: 0 1px 2px rgba(0, 0, 0, .95), 0 0 10px rgba(0, 0, 0, .8);
 }
 
 /* Thème LIGHT : bouton soleil — Pierrot parmi les chrysanthèmes */
@@ -89,6 +98,11 @@ body.ogs-light {
   --profile-border: rgba(91, 45, 79, .22);
   --profile-input: rgba(255, 252, 246, .95);
   --profile-avatar-ring: #fbf6ec;
+  /* Texte posé directement sur l'image (hors panneaux) */
+  --profile-free-text: #fbf3e6;     /* ivoire */
+  --profile-free-heading: #f4b89c;  /* corail clair des chrysanthèmes */
+  --profile-free-link: #f3c97e;     /* or clair */
+  --profile-free-shadow: 0 1px 2px rgba(15, 12, 28, .95), 0 0 10px rgba(15, 12, 28, .75);
 }
 
 /* Mode AUTO : suit le réglage clair/sombre de l'ordinateur */
@@ -109,6 +123,10 @@ body.ogs-light {
     --profile-border: rgba(192, 40, 58, .45);
     --profile-input: rgba(18, 10, 12, .85);
     --profile-avatar-ring: #1a0a0e;
+  --profile-free-text: #f1e9e1;
+  --profile-free-heading: #e8c9c0;
+  --profile-free-link: #ff6b6b;
+  --profile-free-shadow: 0 1px 2px rgba(0, 0, 0, .95), 0 0 10px rgba(0, 0, 0, .8);
   }
 }
 
@@ -152,7 +170,7 @@ button,
   font-synthesis: none;
 }
 
-/* Typographie dynamique */
+/* Typographie : texte posé directement sur l'image de fond */
 .container,
 .container p,
 .container span,
@@ -160,14 +178,11 @@ button,
 .container label,
 .container li,
 .container td,
-.container th {
-  color: var(--profile-text) !important;
-  text-shadow: none !important;
-}
-
+.container th,
 .container small,
 .container .text-muted {
-  color: var(--profile-muted) !important;
+  color: var(--profile-free-text) !important;
+  text-shadow: var(--profile-free-shadow) !important;
 }
 
 /* Titres : la hiérarchie passe par la taille et l'espacement, pas par le gras */
@@ -183,9 +198,9 @@ button,
 .user-profile h1,
 .user-profile h2,
 .user-profile h3 {
-  color: var(--profile-heading) !important;
+  color: var(--profile-free-heading) !important;
   letter-spacing: .04em;
-  text-shadow: none !important;
+  text-shadow: var(--profile-free-shadow) !important;
 }
 
 .container h1,
@@ -197,18 +212,53 @@ button,
 a,
 .container a,
 .container a:visited {
-  color: var(--profile-link) !important;
+  color: var(--profile-free-link) !important;
   text-decoration: none;
-  text-shadow: none !important;
+  text-shadow: var(--profile-free-shadow) !important;
 }
 
 a:hover,
 a:focus,
 .container a:hover,
 .container a:focus {
-  color: var(--profile-link-hover) !important;
+  color: var(--profile-free-text) !important;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* Texte à l'intérieur des panneaux, cartes et tableaux : couleurs foncées, sans halo */
+.container .panel *,
+.container .card *,
+.container .well *,
+.container table *,
+.container .table * {
+  color: var(--profile-panel-text) !important;
+  text-shadow: none !important;
+}
+
+.container .panel h1, .container .panel h2, .container .panel h3,
+.container .panel h4, .container .panel h5, .container .panel h6,
+.container .card h1, .container .card h2, .container .card h3,
+.container .card h4, .container .card h5, .container .card h6,
+.container .well h1, .container .well h2, .container .well h3,
+.container .well h4, .container .well h5, .container .well h6 {
+  color: var(--profile-heading) !important;
+}
+
+.container .panel a,
+.container .card a,
+.container .well a,
+.container table a,
+.container .table a {
+  color: var(--profile-link) !important;
+}
+
+.container .panel a:hover,
+.container .card a:hover,
+.container .well a:hover,
+.container table a:hover,
+.container .table a:hover {
+  color: var(--profile-link-hover) !important;
 }
 
 /* Panneaux dynamiques */
@@ -248,8 +298,13 @@ a:focus,
 }
 
 .panel-heading *,
-.card-header * {
+.card-header *,
+.container .panel .panel-heading,
+.container .panel .panel-heading *,
+.container .card .card-header,
+.container .card .card-header * {
   color: var(--profile-on-accent) !important;
+  text-shadow: none !important;
 }
 
 .navbar,
@@ -282,6 +337,17 @@ input[type="submit"] {
   letter-spacing: .03em;
   text-shadow: none !important;
   box-shadow: none !important;
+}
+
+.container .btn,
+.container .btn *,
+.container button,
+.container button *,
+.container .badge,
+.container .label,
+.container .nav-tabs > li.active > a {
+  color: var(--profile-on-accent) !important;
+  text-shadow: none !important;
 }
 
 .btn:hover,
@@ -332,6 +398,13 @@ thead th {
   background: var(--profile-header-bg) !important;
   color: var(--profile-on-accent) !important;
   letter-spacing: .04em;
+}
+
+.container thead th,
+.container thead th *,
+.container .table > thead > tr > th {
+  color: var(--profile-on-accent) !important;
+  text-shadow: none !important;
 }
 
 .table td,
