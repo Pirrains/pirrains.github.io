@@ -541,27 +541,21 @@ html body table td a:visited {
   text-shadow: none !important;
 }
 
-/* Cadres blancs OGS (classe .Card, avec majuscule) : texte foncé, sans ombrage */
-html body .Card,
-html body .Card *,
-html body [class*="Card"] *,
-html body [class*="card"] * {
+/* Cadre « Activité » uniquement : texte foncé, sans ombrage */
+html body .activity-card,
+html body .activity-card * {
   color: var(--profile-panel-text) !important;
   -webkit-text-fill-color: var(--profile-panel-text) !important;
   text-shadow: none !important;
 }
 
-html body .Card h1, html body .Card h2, html body .Card h3,
-html body .Card h4, html body .Card h5, html body .Card h6,
-html body [class*="Card"] h1, html body [class*="Card"] h2, html body [class*="Card"] h3,
-html body [class*="Card"] h4, html body [class*="Card"] h5, html body [class*="Card"] h6 {
+html body .activity-card h1, html body .activity-card h2, html body .activity-card h3,
+html body .activity-card h4, html body .activity-card h5, html body .activity-card h6 {
   color: var(--profile-heading) !important;
   -webkit-text-fill-color: var(--profile-heading) !important;
 }
 
 /* En-tête des tableaux : reste ivoire sur le bandeau prune */
-html body [class*="Card"] table th,
-html body [class*="Card"] table th *,
 html body table thead th,
 html body table thead th *,
 html body table tr th,
@@ -571,7 +565,7 @@ html body table tr th * {
   text-shadow: none !important;
 }
 
-html body .Card {
+html body .activity-card {
   background: var(--profile-panel) !important;
   border: 1px solid var(--profile-border) !important;
   border-radius: var(--radius) !important;
