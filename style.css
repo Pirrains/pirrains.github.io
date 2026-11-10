@@ -4,7 +4,7 @@
   --radius: 16px;
 
   /* Thème JOUR par défaut : Pierrot parmi les chrysanthèmes */
-  --profile-bg-image: url("https://i.ibb.co/TpYNVNp/Portrait-Pierrot-parmi-les-chrysanthe-mes.png");
+  --profile-bg-image: url("https://i.ibb.co/hRWt0x84/Fleur.png");
   --profile-text: #2b2430;          /* encre prune très foncée */
   --profile-muted: #6e6270;         /* texte secondaire */
   --profile-heading: #5b2d4f;       /* prune */
@@ -47,7 +47,7 @@ body.ogs-dark,
 .dark-theme .profile,
 [data-theme="dark"] .container,
 [data-theme="dark"] .profile {
-  --profile-bg-image: url("https://i.ibb.co/1YmKhkk6/Portrait-gothique-d-une-Pierrot-sanglante.png");
+  --profile-bg-image: url("https://i.ibb.co/NgX5hfBs/fleur-ffaner.png");
   --profile-text: #f1e9e1;          /* ivoire */
   --profile-muted: #b9aaa6;
   --profile-heading: #e8c9c0;       /* ivoire rosé */
@@ -83,7 +83,7 @@ html[data-bs-theme="light"],
 body[data-bs-theme="light"],
 html.ogs-light,
 body.ogs-light {
-  --profile-bg-image: url("https://i.ibb.co/TpYNVNp/Portrait-Pierrot-parmi-les-chrysanthe-mes.png");
+  --profile-bg-image: url("https://i.ibb.co/hRWt0x84/Fleur.png");
   --profile-text: #2b2430;
   --profile-muted: #6e6270;
   --profile-heading: #5b2d4f;
@@ -108,7 +108,7 @@ body.ogs-light {
 /* Mode AUTO : suit le réglage clair/sombre de l'ordinateur */
 @media (prefers-color-scheme: dark) {
   :root {
-    --profile-bg-image: url("https://i.ibb.co/1YmKhkk6/Portrait-gothique-d-une-Pierrot-sanglante.png");
+    --profile-bg-image: url("https://i.ibb.co/NgX5hfBs/fleur-ffaner.png");
     --profile-text: #f1e9e1;
     --profile-muted: #b9aaa6;
     --profile-heading: #e8c9c0;
